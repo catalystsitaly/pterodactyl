@@ -76,9 +76,9 @@ const GSLTokenModalFeature = () => {
             <Modal visible={visible} onDismissed={() => setVisible(false)} closeOnBackground={false} showSpinnerOverlay={loading}>
                 <FlashMessageRender key={'feature:gslToken'} css={tw`mb-4`}/>
                 <Form>
-                    <h2 css={tw`text-2xl mb-4 text-neutral-100`}>Invalid GSL token!</h2>
-                    <p css={tw`mt-4`}>It seems like your Gameserver Login Token (GSL token) is invalid or has expired.</p>
-                    <p css={tw`mt-4`}>You can either generate a new one and enter it below or leave the field blank to remove it completely.</p>
+                    <h2 css={tw`text-2xl mb-4 text-neutral-100`}>无效的 GSL 令牌！</h2>
+                    <p css={tw`mt-4`}>您的 Gameserver 登录令牌（GSL 令牌）似乎无效或已过期。</p>
+                    <p css={tw`mt-4`}>您可以生成一个新的并在下面输入，也可以将该字段留空以完全删除它。</p>
                     <div css={tw`sm:flex items-center mt-4`}>
                         <Field
                             name={'gslToken'}
@@ -89,7 +89,7 @@ const GSLTokenModalFeature = () => {
                     </div>
                     <div css={tw`mt-8 sm:flex items-center justify-end`}>
                         <Button type={'submit'} css={tw`mt-4 sm:mt-0 sm:ml-4 w-full sm:w-auto`}>
-                            Update GSL Token
+                            更新 GSL 令牌
                         </Button>
                     </div>
                 </Form>

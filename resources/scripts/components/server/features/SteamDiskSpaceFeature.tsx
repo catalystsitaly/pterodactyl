@@ -48,25 +48,25 @@ const SteamDiskSpaceFeature = () => {
             {isAdmin ?
                 <>
                     <div css={tw`mt-4 sm:flex items-center`}>
-                        <h2 css={tw`text-2xl mb-4 text-neutral-100 `}>Out of available disk space...</h2>
+                        <h2 css={tw`text-2xl mb-4 text-neutral-100 `}>可用磁盘空间不足...</h2>
                     </div>
-                    <p css={tw`mt-4`}>This server has run out of available disk space and cannot complete the install or update process.</p>
-                    <p css={tw`mt-4`}>Ensure the machine has enough disk space by typing <code css={tw`font-mono bg-neutral-900 rounded py-1 px-2`}>df -h</code> on the machine hosting this server. Delete files or increase the available disk space to resolve the issue.</p>
+                    <p css={tw`mt-4`}>此服务器已用完可用磁盘空间，无法完成安装或更新过程。</p>
+                    <p css={tw`mt-4`}>通过在托管此服务器的计算机上输入 <code css={tw`font-mono bg-neutral-900 rounded py-1 px-2`}>df -h</code> 确保计算机有足够的磁盘空间。 删除文件或增加可用磁盘空间以解决问题。</p>
                     <div css={tw`mt-8 sm:flex items-center justify-end`}>
                         <Button onClick={() => setVisible(false)} css={tw`w-full sm:w-auto border-transparent`}>
-                            Close
+                            关闭
                         </Button>
                     </div>
                 </>
                 :
                 <>
                     <div css={tw`mt-4 sm:flex items-center`}>
-                        <h2 css={tw`text-2xl mb-4 text-neutral-100`}>Out of available disk space...</h2>
+                        <h2 css={tw`text-2xl mb-4 text-neutral-100`}>可用磁盘空间不足...</h2>
                     </div>
-                    <p css={tw`mt-4`}>This server has run out of available disk space and cannot complete the install or update process. Please get in touch with the administrator(s) and inform them of disk space issues.</p>
+                    <p css={tw`mt-4`}>此服务器已用完可用磁盘空间，无法完成安装或更新过程。 请与管理员联系并告知他们磁盘空间问题。</p>
                     <div css={tw`mt-8 sm:flex items-center justify-end`}>
                         <Button onClick={() => setVisible(false)} css={tw`w-full sm:w-auto border-transparent`}>
-                            Close
+                            关闭
                         </Button>
                     </div>
                 </>

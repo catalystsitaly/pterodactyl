@@ -21,7 +21,7 @@ interface Values {
 }
 
 const schema = object().shape({
-    directoryName: string().required('A valid directory name must be provided.'),
+    directoryName: string().required('必须提供有效的目录名称。'),
 });
 
 const generateDirectoryData = (name: string): FileObject => ({
@@ -76,7 +76,7 @@ export default ({ className }: WithClassname) => {
                 >
                     {({ resetForm, submitForm, isSubmitting: _, values }) => (
                         <Dialog
-                            title={'Create Directory'}
+                            title={'创建目录'}
                             open={visible}
                             onClose={() => {
                                 setVisible(false);
@@ -89,10 +89,10 @@ export default ({ className }: WithClassname) => {
                                     autoFocus
                                     id={'directoryName'}
                                     name={'directoryName'}
-                                    label={'Name'}
+                                    label={'目录名'}
                                 />
                                 <p css={tw`mt-2 text-sm md:text-base break-all`}>
-                                    <span css={tw`text-neutral-200`}>This directory will be created as&nbsp;</span>
+                                    <span css={tw`text-neutral-200`}>此目录将被创建于&nbsp;</span>
                                     <Code>/home/container/
                                         <span css={tw`text-cyan-200`}>
                                             {join(directory, values.directoryName).replace(/^(\.\.\/|\/)+/, '')}
@@ -108,16 +108,16 @@ export default ({ className }: WithClassname) => {
                                         resetForm();
                                     }}
                                 >
-                                    Cancel
+                                    取消
                                 </Button.Text>
-                                <Button className={'w-full sm:w-auto'} onClick={submitForm}>Create</Button>
+                                <Button className={'w-full sm:w-auto'} onClick={submitForm}>创建</Button>
                             </Dialog.Buttons>
                         </Dialog>
                     )}
                 </Formik>
             </Portal>
             <Button.Text onClick={() => setVisible(true)} className={className}>
-                Create Directory
+                创建目录
             </Button.Text>
         </>
     );

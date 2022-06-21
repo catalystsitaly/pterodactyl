@@ -106,21 +106,21 @@ export default ({ backup }: Props) => {
             <Dialog.Confirm
                 open={modal === 'unlock'}
                 onClose={() => setModal('')}
-                title={`Unlock "${backup.name}"`}
+                title={`解锁 "${backup.name}"`}
                 onConfirmed={onLockToggle}
             >
-                This backup will no longer be protected from automated or accidental deletions.
+                您确定要解锁此备份吗？ 它将不再受到意外删除保护。
             </Dialog.Confirm>
             <Dialog.Confirm
                 open={modal === 'restore'}
                 onClose={() => setModal('')}
-                confirm={'Restore'}
-                title={`Restore "${backup.name}"`}
+                confirm={'回档'}
+                title={`恢复 "${backup.name}"`}
                 onConfirmed={() => doRestorationAction()}
             >
                 <p>
-                    Your server will be stopped. You will not be able to control the power state, access the file
-                    manager, or create additional backups until completed.
+                    该服务器将停止以恢复备份。 备份开始后，您将
+                    无法控制服务器电源状态、访问文件管理器或创建其他备份直到它完成。
                 </p>
                 <p css={tw`mt-4 -mb-2 bg-gray-700 p-3 rounded`}>
                     <label
@@ -135,18 +135,18 @@ export default ({ backup }: Props) => {
                             checked={truncate}
                             onChange={() => setTruncate(s => !s)}
                         />
-                        Delete all files before restoring backup.
+                        在恢复此备份之前删除所有文件和文件夹。
                     </label>
                 </p>
             </Dialog.Confirm>
             <Dialog.Confirm
-                title={`Delete "${backup.name}"`}
-                confirm={'Continue'}
+                title={`删除 "${backup.name}"`}
+                confirm={'继续'}
                 open={modal === 'delete'}
                 onClose={() => setModal('')}
                 onConfirmed={doDeletion}
             >
-                This is a permanent operation. The backup cannot be recovered once deleted.
+                您确定要删除此备份吗？ 这是一个永久性操作。
             </Dialog.Confirm>
             <SpinnerOverlay visible={loading} fixed/>
             {backup.isSuccessful ?
@@ -164,13 +164,13 @@ export default ({ backup }: Props) => {
                         <Can action={'backup.download'}>
                             <DropdownButtonRow onClick={doDownload}>
                                 <FontAwesomeIcon fixedWidth icon={faCloudDownloadAlt} css={tw`text-xs`}/>
-                                <span css={tw`ml-2`}>Download</span>
+                                <span css={tw`ml-2`}>下载</span>
                             </DropdownButtonRow>
                         </Can>
                         <Can action={'backup.restore'}>
                             <DropdownButtonRow onClick={() => setModal('restore')}>
                                 <FontAwesomeIcon fixedWidth icon={faBoxOpen} css={tw`text-xs`}/>
-                                <span css={tw`ml-2`}>Restore</span>
+                                <span css={tw`ml-2`}>恢复</span>
                             </DropdownButtonRow>
                         </Can>
                         <Can action={'backup.delete'}>
@@ -181,12 +181,12 @@ export default ({ backup }: Props) => {
                                         icon={backup.isLocked ? faUnlock : faLock}
                                         css={tw`text-xs mr-2`}
                                     />
-                                    {backup.isLocked ? 'Unlock' : 'Lock'}
+                                    {backup.isLocked ? '解锁' : '锁定'}
                                 </DropdownButtonRow>
                                 {!backup.isLocked &&
                                 <DropdownButtonRow danger onClick={() => setModal('delete')}>
                                     <FontAwesomeIcon fixedWidth icon={faTrashAlt} css={tw`text-xs`}/>
-                                    <span css={tw`ml-2`}>Delete</span>
+                                    <span css={tw`ml-2`}>删除</span>
                                 </DropdownButtonRow>
                                 }
                             </>

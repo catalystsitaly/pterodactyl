@@ -12,13 +12,13 @@ export default ({ meta }: { meta: Record<string, unknown> }) => {
                 open={open}
                 onClose={() => setOpen(false)}
                 hideCloseIcon
-                title={'Metadata'}
+                title={'元数据'}
             >
                 <pre className={'bg-gray-900 rounded p-2 overflow-x-scroll font-mono text-sm leading-relaxed'}>
                     {JSON.stringify(meta, null, 2)}
                 </pre>
                 <Dialog.Buttons>
-                    <Button.Text onClick={() => setOpen(false)}>Close</Button.Text>
+                    <Button.Text onClick={() => setOpen(false)}>关闭</Button.Text>
                 </Dialog.Buttons>
             </Dialog>
             <button

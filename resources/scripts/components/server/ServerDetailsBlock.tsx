@@ -77,13 +77,13 @@ const ServerDetailsBlock = ({ className }: DetailBlockProps) => {
         <div className={className}>
             <StatBlock
                 icon={faClock}
-                title={'Uptime'}
+                title={'正常运行时间'}
                 color={getBackgroundColor(status === 'running' ? 0 : (status !== 'offline' ? 9 : 10), 10)}
             >
                 {stats.uptime > 0 ?
                     <UptimeDuration uptime={stats.uptime / 1000}/>
                     :
-                    'Offline'
+                    '离线'
                 }
             </StatBlock>
             <StatBlock
@@ -91,68 +91,68 @@ const ServerDetailsBlock = ({ className }: DetailBlockProps) => {
                 title={'CPU'}
                 color={getBackgroundColor(stats.cpu, limits.cpu)}
                 description={limits.memory
-                    ? `This server is allowed to use up to ${limits.cpu}% of the host's available CPU resources.`
-                    : 'No CPU limit has been configured for this server.'
+                    ? `此服务器最多可使用主机可用 CPU 资源的 ${limits.cpu}%。`
+                    : '没有为此服务器配置 CPU 限制。'
                 }
             >
                 {status === 'offline' ?
-                    <span className={'text-gray-400'}>Offline</span>
+                    <span className={'text-gray-400'}>离线</span>
                     :
                     `${stats.cpu.toFixed(2)}%`
                 }
             </StatBlock>
             <StatBlock
                 icon={faMemory}
-                title={'Memory'}
+                title={'内存'}
                 color={getBackgroundColor(stats.memory / 1024, limits.memory * 1024)}
                 description={limits.memory
-                    ? `This server is allowed to use up to ${megabytesToHuman(limits.memory)} of memory.`
-                    : 'No memory limit has been configured for this server.'
+                    ? `此服务器最多允许使用 ${megabytesToHuman(limits.memory)} 的内存。`
+                    : '没有为此服务器配置内存限制。'
                 }
             >
                 {status === 'offline' ?
-                    <span className={'text-gray-400'}>Offline</span>
+                    <span className={'text-gray-400'}>离线</span>
                     :
                     bytesToHuman(stats.memory)
                 }
             </StatBlock>
             <StatBlock
                 icon={faHdd}
-                title={'Disk'}
+                title={'磁盘'}
                 color={getBackgroundColor(stats.disk / 1024, limits.disk * 1024)}
                 description={limits.disk
-                    ? `This server is allowed to use up to ${megabytesToHuman(limits.disk)} of disk space.`
-                    : 'No disk space limit has been configured for this server.'
+                    ? `此服务器最多允许使用 ${megabytesToHuman(limits.disk)} 的磁盘空间。`
+                    : '没有为此服务器配置磁盘空间限制。'
                 }
             >
                 {bytesToHuman(stats.disk)}
             </StatBlock>
             <StatBlock
                 icon={faCloudDownloadAlt}
-                title={'Network (Inbound)'}
-                description={'The total amount of network traffic that your server has recieved since it was started.'}
+                title={'网络(入站)'}
+                description={'您的服务器自启动以来收到的网络流量总量。'}
             >
                 {status === 'offline' ?
-                    <span className={'text-gray-400'}>Offline</span>
+                    <span className={'text-gray-400'}>离线</span>
                     :
                     bytesToHuman(stats.tx)
                 }
             </StatBlock>
             <StatBlock
                 icon={faCloudUploadAlt}
-                title={'Network (Outbound)'}
-                description={'The total amount of traffic your server has sent across the internet since it was started.'}
+                title={'网络(出站)'}
+                description={'您的服务器自启动以来通过 Internet 发送的总流量。'}
             >
                 {status === 'offline' ?
-                    <span className={'text-gray-400'}>Offline</span>
+                    <span className={'text-gray-400'}>离线</span>
                     :
                     bytesToHuman(stats.rx)
                 }
             </StatBlock>
             <StatBlock
                 icon={faWifi}
-                title={'Address'}
-                description={`You can connect to your server at: ${allocation}`}
+                title={'地址'}
+                description={`您可以在以下地址连接到您的服务器： ${allocation}`}
             >
                 {allocation}
             </StatBlock>
