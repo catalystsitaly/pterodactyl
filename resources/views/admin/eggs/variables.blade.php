@@ -125,7 +125,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label">P权限</label>
+                        <label class="control-label">权限</label>
                         <select name="options[]" class="pOptions form-control" multiple>
                             <option value="user_viewable">用户只读</option>
                             <option value="user_editable">用户可读写</option>
@@ -153,7 +153,7 @@
     <script>
         $('.pOptions').select2();
         $('[data-action="delete"]').on('mouseenter', function (event) {
-            $(this).find('i').html(' Delete Variable');
+            $(this).find('i').html(' 删除变量');
         }).on('mouseleave', function (event) {
             $(this).find('i').html('');
         });

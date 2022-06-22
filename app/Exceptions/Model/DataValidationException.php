@@ -22,7 +22,7 @@ class DataValidationException extends PterodactylException implements HttpExcept
     public function __construct(Validator $validator)
     {
         parent::__construct(
-            'Data integrity exception encountered while performing database write operation. ' . $validator->errors()->toJson()
+            '执行数据库写入操作时遇到数据完整性异常。 ' . $validator->errors()->toJson()
         );
 
         $this->validator = $validator;

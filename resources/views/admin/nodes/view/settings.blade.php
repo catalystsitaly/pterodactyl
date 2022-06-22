@@ -77,7 +77,7 @@
                             <input type="text" autocomplete="off" name="fqdn" class="form-control" value="{{ old('fqdn', $node->fqdn) }}" />
                         </div>
                         <p class="text-muted"><small>请输入节点服务器域名 (例如 <code>node.example.com</code>) 用来连接至守护进程. 仅当您没有为此节点使用 SSL 时才可以使用 IP 地址.
-                                <a tabindex="0" data-toggle="popover" data-trigger="focus" title="Why do I need a FQDN?" data-content="In order to secure communications between your server and this node we use SSL. We cannot generate a SSL certificate for IP Addresses, and as such you will need to provide a FQDN.">Why?</a>
+                                <a tabindex="0" data-toggle="popover" data-trigger="focus" title="为什么需要(FQDN)子域名？" data-content="为了保护您的服务器与此节点之间的通信，我们使用 SSL。 我们无法为 IP 地址生成 SSL 证书，因此您需要提供(FQDN)子域名。">为什么？</a>
                             </small></p>
                     </div>
                     <div class="form-group col-xs-12">

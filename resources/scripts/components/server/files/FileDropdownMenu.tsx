@@ -135,8 +135,8 @@ const FileDropdownMenu = ({ file }: { file: FileObject }) => {
                 confirm={'删除'}
                 onConfirmed={doDeletion}
             >
-                一旦删除，您将无法恢复&nbsp;
-                <span className={'font-semibold text-gray-50'}>{file.name}</span> 的文件。
+                一旦删除，您将永远无法恢复&nbsp;
+                <span className={'font-semibold text-gray-50'}>{file.name}</span> ，你确定要这样吗？
             </Dialog.Confirm>
             <DropdownMenu
                 ref={onClickRef}

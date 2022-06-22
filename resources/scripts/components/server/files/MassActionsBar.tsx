@@ -75,14 +75,14 @@ const MassActionsBar = () => {
                 >
                     <p className={'mb-2'}>
                         你确定删除这些共计&nbsp;
-                        <span className={'font-semibold text-gray-50'}>{selectedFiles.length} 个文件</span>? 这是
-                        一项永久性操作，无法撤销也无法恢复！
+                        <span className={'font-semibold text-gray-50'}>{selectedFiles.length}个文件/目录</span>吗? 这是
+                        不可逆转的操作，你将没有回头路！
                     </p>
                     {selectedFiles.slice(0, 15).map(file => (
                         <li key={file}>{file}</li>))
                     }
                     {selectedFiles.length > 15 &&
-                        <li>and {selectedFiles.length - 15} others</li>
+                        <li>和另外 {selectedFiles.length - 15} 个</li>
                     }
                 </Dialog.Confirm>
                 {showMove &&
