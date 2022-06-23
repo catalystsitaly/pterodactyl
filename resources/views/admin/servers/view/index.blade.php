@@ -61,7 +61,7 @@
                                 <td>CPU 限制</td>
                                 <td>
                                     @if($server->cpu === 0)
-                                        <code>Unlimited</code>
+                                        <code>无限制</code>
                                     @else
                                         <code>{{ $server->cpu }}%</code>
                                     @endif

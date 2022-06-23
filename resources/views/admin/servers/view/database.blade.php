@@ -49,7 +49,7 @@
                             @if($database->max_connections != null)
                                 <td>{{ $database->max_connections }}</td>
                             @else
-                                <td>Unlimited</td>
+                                <td>无限制</td>
                             @endif
                             <td class="text-center">
                                 <button data-action="reset-password" data-id="{{ $database->id }}" class="btn btn-xs btn-primary"><i class="fa fa-refresh"></i></button>
