@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { RouteComponentProps } from 'react-router';
-import { parse } from 'query-string';
 import { Link } from 'react-router-dom';
 import performPasswordReset from '@/api/auth/performPasswordReset';
 import { httpErrorToHuman } from '@/api/http';
@@ -20,23 +19,23 @@ interface Values {
 }
 
 export default ({ match, location }: RouteComponentProps<{ token: string }>) => {
-    const [ email, setEmail ] = useState('');
+    const [email, setEmail] = useState('');
 
     const { clearFlashes, addFlash } = useStoreActions((actions: Actions<ApplicationStore>) => actions.flashes);
 
-    const parsed = parse(location.search);
-    if (email.length === 0 && parsed.email) {
-        setEmail(parsed.email as string);
+    const parsed = new URLSearchParams(location.search);
+    if (email.length === 0 && parsed.get('email')) {
+        setEmail(parsed.get('email') || '');
     }
 
     const submit = ({ password, passwordConfirmation }: Values, { setSubmitting }: FormikHelpers<Values>) => {
         clearFlashes();
         performPasswordReset(email, { token: match.params.token, password, passwordConfirmation })
             .then(() => {
-                // @ts-ignore
+                // @ts-expect-error this is valid
                 window.location = '/';
             })
-            .catch(error => {
+            .catch((error) => {
                 console.error(error);
 
                 setSubmitting(false);
@@ -52,22 +51,20 @@ export default ({ match, location }: RouteComponentProps<{ token: string }>) => 
                 passwordConfirmation: '',
             }}
             validationSchema={object().shape({
-                password: string().required('需要新密码。')
+                password: string()
+                    .required('需要新密码。')
                     .min(8, '您的新密码长度应至少为 8 个字符。'),
                 passwordConfirmation: string()
                     .required('您的新密码不匹配。')
-                    // @ts-ignore
-                    .oneOf([ ref('password'), null ], '您的新密码不匹配。'),
+                    // @ts-expect-error this is valid
+                    .oneOf([ref('password'), null], '您的新密码不匹配。'),
             })}
         >
             {({ isSubmitting }) => (
-                <LoginFormContainer
-                    title={'重置密码'}
-                    css={tw`w-full flex`}
-                >
+                <LoginFormContainer title={'重置密码'} css={tw`w-full flex`}>
                     <div>
                         <label>邮箱</label>
-                        <Input value={email} isLight disabled/>
+                        <Input value={email} isLight disabled />
                     </div>
                     <div css={tw`mt-6`}>
                         <Field
@@ -79,20 +76,10 @@ export default ({ match, location }: RouteComponentProps<{ token: string }>) => 
                         />
                     </div>
                     <div css={tw`mt-6`}>
-                        <Field
-                            light
-                            label={'确认新密码'}
-                            name={'passwordConfirmation'}
-                            type={'password'}
-                        />
+                        <Field light label={'确认新密码'} name={'passwordConfirmation'} type={'password'} />
                     </div>
                     <div css={tw`mt-6`}>
-                        <Button
-                            size={'xlarge'}
-                            type={'submit'}
-                            disabled={isSubmitting}
-                            isLoading={isSubmitting}
-                        >
+                        <Button size={'xlarge'} type={'submit'} disabled={isSubmitting} isLoading={isSubmitting}>
                             重置密码
                         </Button>
                     </div>

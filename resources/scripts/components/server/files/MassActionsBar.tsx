@@ -13,22 +13,22 @@ import Portal from '@/components/elements/Portal';
 import { Dialog } from '@/components/elements/dialog';
 
 const MassActionsBar = () => {
-    const uuid = ServerContext.useStoreState(state => state.server.data!.uuid);
+    const uuid = ServerContext.useStoreState((state) => state.server.data!.uuid);
 
     const { mutate } = useFileManagerSwr();
     const { clearFlashes, clearAndAddHttpError } = useFlash();
-    const [ loading, setLoading ] = useState(false);
-    const [ loadingMessage, setLoadingMessage ] = useState('');
-    const [ showConfirm, setShowConfirm ] = useState(false);
-    const [ showMove, setShowMove ] = useState(false);
-    const directory = ServerContext.useStoreState(state => state.files.directory);
+    const [loading, setLoading] = useState(false);
+    const [loadingMessage, setLoadingMessage] = useState('');
+    const [showConfirm, setShowConfirm] = useState(false);
+    const [showMove, setShowMove] = useState(false);
+    const directory = ServerContext.useStoreState((state) => state.files.directory);
 
-    const selectedFiles = ServerContext.useStoreState(state => state.files.selectedFiles);
-    const setSelectedFiles = ServerContext.useStoreActions(actions => actions.files.setSelectedFiles);
+    const selectedFiles = ServerContext.useStoreState((state) => state.files.selectedFiles);
+    const setSelectedFiles = ServerContext.useStoreActions((actions) => actions.files.setSelectedFiles);
 
     useEffect(() => {
         if (!loading) setLoadingMessage('');
-    }, [ loading ]);
+    }, [loading]);
 
     const onClickCompress = () => {
         setLoading(true);
@@ -38,7 +38,7 @@ const MassActionsBar = () => {
         compressFiles(uuid, directory, selectedFiles)
             .then(() => mutate())
             .then(() => setSelectedFiles([]))
-            .catch(error => clearAndAddHttpError({ key: 'files', error }))
+            .catch((error) => clearAndAddHttpError({ key: 'files', error }))
             .then(() => setLoading(false));
     };
 
@@ -50,10 +50,10 @@ const MassActionsBar = () => {
 
         deleteFiles(uuid, directory, selectedFiles)
             .then(() => {
-                mutate(files => files.filter(f => selectedFiles.indexOf(f.name) < 0), false);
+                mutate((files) => files.filter((f) => selectedFiles.indexOf(f.name) < 0), false);
                 setSelectedFiles([]);
             })
-            .catch(error => {
+            .catch((error) => {
                 mutate();
                 clearAndAddHttpError({ key: 'files', error });
             })
@@ -75,25 +75,23 @@ const MassActionsBar = () => {
                 >
                     <p className={'mb-2'}>
                         你确定删除这些共计&nbsp;
-                        <span className={'font-semibold text-gray-50'}>{selectedFiles.length}个文件/目录</span>吗? 这是
+                        <span className={'font-semibold text-gray-50'}>{selectedFiles.length}个文件/目录</span> 吗? 这是
                         不可逆转的操作，你将没有回头路！
                     </p>
-                    {selectedFiles.slice(0, 15).map(file => (
-                        <li key={file}>{file}</li>))
-                    }
-                    {selectedFiles.length > 15 &&
-                        <li>和另外 {selectedFiles.length - 15} 个</li>
-                    }
+                    {selectedFiles.slice(0, 15).map((file) => (
+                        <li key={file}>{file}</li>
+                    ))}
+                    {selectedFiles.length > 15 && <li>和另外 {selectedFiles.length - 15} 个</li>}
                 </Dialog.Confirm>
-                {showMove &&
-                <RenameFileModal
-                    files={selectedFiles}
-                    visible
-                    appear
-                    useMoveTerminology
-                    onDismissed={() => setShowMove(false)}
-                />
-                }
+                {showMove && (
+                    <RenameFileModal
+                        files={selectedFiles}
+                        visible
+                        appear
+                        useMoveTerminology
+                        onDismissed={() => setShowMove(false)}
+                    />
+                )}
                 <Portal>
                     <div className={'fixed bottom-0 mb-6 flex justify-center w-full z-50'}>
                         <Fade timeout={75} in={selectedFiles.length > 0} unmountOnExit>

@@ -34,9 +34,9 @@ const EditScheduleModal = ({ schedule }: Props) => {
     const { addError, clearFlashes } = useFlash();
     const { dismiss } = useContext(ModalContext);
 
-    const uuid = ServerContext.useStoreState(state => state.server.data!.uuid);
-    const appendSchedule = ServerContext.useStoreActions(actions => actions.schedules.appendSchedule);
-    const [ showCheatsheet, setShowCheetsheet ] = useState(false);
+    const uuid = ServerContext.useStoreState((state) => state.server.data!.uuid);
+    const appendSchedule = ServerContext.useStoreActions((actions) => actions.schedules.appendSchedule);
+    const [showCheatsheet, setShowCheetsheet] = useState(false);
 
     useEffect(() => {
         return () => {
@@ -59,12 +59,12 @@ const EditScheduleModal = ({ schedule }: Props) => {
             onlyWhenOnline: values.onlyWhenOnline,
             isActive: values.enabled,
         })
-            .then(schedule => {
+            .then((schedule) => {
                 setSubmitting(false);
                 appendSchedule(schedule);
                 dismiss();
             })
-            .catch(error => {
+            .catch((error) => {
                 console.error(error);
 
                 setSubmitting(false);
@@ -75,32 +75,34 @@ const EditScheduleModal = ({ schedule }: Props) => {
     return (
         <Formik
             onSubmit={submit}
-            initialValues={{
-                name: schedule?.name || '',
-                minute: schedule?.cron.minute || '*/5',
-                hour: schedule?.cron.hour || '*',
-                dayOfMonth: schedule?.cron.dayOfMonth || '*',
-                month: schedule?.cron.month || '*',
-                dayOfWeek: schedule?.cron.dayOfWeek || '*',
-                enabled: schedule?.isActive ?? true,
-                onlyWhenOnline: schedule?.onlyWhenOnline ?? true,
-            } as Values}
+            initialValues={
+                {
+                    name: schedule?.name || '',
+                    minute: schedule?.cron.minute || '*/5',
+                    hour: schedule?.cron.hour || '*',
+                    dayOfMonth: schedule?.cron.dayOfMonth || '*',
+                    month: schedule?.cron.month || '*',
+                    dayOfWeek: schedule?.cron.dayOfWeek || '*',
+                    enabled: schedule?.isActive ?? true,
+                    onlyWhenOnline: schedule?.onlyWhenOnline ?? true,
+                } as Values
+            }
         >
             {({ isSubmitting }) => (
                 <Form>
                     <h3 css={tw`text-2xl mb-6`}>{schedule ? '编辑计划' : '创建新计划'}</h3>
-                    <FlashMessageRender byKey={'schedule:edit'} css={tw`mb-6`}/>
+                    <FlashMessageRender byKey={'schedule:edit'} css={tw`mb-6`} />
                     <Field
                         name={'name'}
                         label={'计划名'}
                         description={'此计划的名字'}
                     />
                     <div css={tw`grid grid-cols-2 sm:grid-cols-5 gap-4 mt-6`}>
-                        <Field name={'minute'} label={'分钟'}/>
-                        <Field name={'hour'} label={'小时'}/>
-                        <Field name={'dayOfMonth'} label={'每月的某一天'}/>
-                        <Field name={'month'} label={'月'}/>
-                        <Field name={'dayOfWeek'} label={'每周的某一天'}/>
+                        <Field name={'minute'} label={'分钟'} />
+                        <Field name={'hour'} label={'小时'} />
+                        <Field name={'dayOfMonth'} label={'每月的某一天'} />
+                        <Field name={'month'} label={'月'} />
+                        <Field name={'dayOfWeek'} label={'每周的某一天'} />
                     </div>
                     <p css={tw`text-neutral-400 text-xs mt-2`}>
                         计划系统支持在定义任务何时开始运行时使用 Cronjob 语法。 使用上面的字段来指定这些计划任务应该何时开始运行。
@@ -111,13 +113,13 @@ const EditScheduleModal = ({ schedule }: Props) => {
                             description={'显示 cronjob 的一些例子'}
                             label={'显示例子'}
                             defaultChecked={showCheatsheet}
-                            onChange={() => setShowCheetsheet(s => !s)}
+                            onChange={() => setShowCheetsheet((s) => !s)}
                         />
-                        {showCheatsheet &&
+                        {showCheatsheet && (
                             <div css={tw`block md:flex w-full`}>
-                                <ScheduleCheatsheetCards/>
+                                <ScheduleCheatsheetCards />
                             </div>
-                        }
+                        )}
                     </div>
                     <div css={tw`mt-6 bg-neutral-700 border border-neutral-800 shadow-inner p-4 rounded`}>
                         <FormikSwitch

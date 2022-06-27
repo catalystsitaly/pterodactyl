@@ -22,19 +22,19 @@ import { dirname } from 'path';
 import CodemirrorEditor from '@/components/elements/CodemirrorEditor';
 
 export default () => {
-    const [ error, setError ] = useState('');
+    const [error, setError] = useState('');
     const { action } = useParams<{ action: 'new' | string }>();
-    const [ loading, setLoading ] = useState(action === 'edit');
-    const [ content, setContent ] = useState('');
-    const [ modalVisible, setModalVisible ] = useState(false);
-    const [ mode, setMode ] = useState('text/plain');
+    const [loading, setLoading] = useState(action === 'edit');
+    const [content, setContent] = useState('');
+    const [modalVisible, setModalVisible] = useState(false);
+    const [mode, setMode] = useState('text/plain');
 
     const history = useHistory();
     const { hash } = useLocation();
 
-    const id = ServerContext.useStoreState(state => state.server.data!.id);
-    const uuid = ServerContext.useStoreState(state => state.server.data!.uuid);
-    const setDirectory = ServerContext.useStoreActions(actions => actions.files.setDirectory);
+    const id = ServerContext.useStoreState((state) => state.server.data!.id);
+    const uuid = ServerContext.useStoreState((state) => state.server.data!.uuid);
+    const setDirectory = ServerContext.useStoreActions((actions) => actions.files.setDirectory);
     const { addError, clearFlashes } = useFlash();
 
     let fetchFileContent: null | (() => Promise<string>) = null;
@@ -48,12 +48,12 @@ export default () => {
         setDirectory(dirname(path));
         getFileContents(uuid, path)
             .then(setContent)
-            .catch(error => {
+            .catch((error) => {
                 console.error(error);
                 setError(httpErrorToHuman(error));
             })
             .then(() => setLoading(false));
-    }, [ action, uuid, hash ]);
+    }, [action, uuid, hash]);
 
     const save = (name?: string) => {
         if (!fetchFileContent) {
@@ -63,7 +63,7 @@ export default () => {
         setLoading(true);
         clearFlashes('files:view');
         fetchFileContent()
-            .then(content => saveFileContents(uuid, name || hashToPath(hash), content))
+            .then((content) => saveFileContents(uuid, name || hashToPath(hash), content))
             .then(() => {
                 if (name) {
                     history.push(`/server/${id}/files/edit#/${encodePathSegments(name)}`);
@@ -72,7 +72,7 @@ export default () => {
 
                 return Promise.resolve();
             })
-            .catch(error => {
+            .catch((error) => {
                 console.error(error);
                 addError({ message: httpErrorToHuman(error), key: 'files:view' });
             })
@@ -80,31 +80,28 @@ export default () => {
     };
 
     if (error) {
-        return (
-            <ServerError message={error} onBack={() => history.goBack()}/>
-        );
+        return <ServerError message={error} onBack={() => history.goBack()} />;
     }
 
     return (
         <PageContentBlock>
-            <FlashMessageRender byKey={'files:view'} css={tw`mb-4`}/>
+            <FlashMessageRender byKey={'files:view'} css={tw`mb-4`} />
             <ErrorBoundary>
                 <div css={tw`mb-4`}>
-                    <FileManagerBreadcrumbs withinFileEditor isNewFile={action !== 'edit'}/>
+                    <FileManagerBreadcrumbs withinFileEditor isNewFile={action !== 'edit'} />
                 </div>
             </ErrorBoundary>
-            {hash.replace(/^#/, '').endsWith('.pteroignore') &&
-            <div css={tw`mb-4 p-4 border-l-4 bg-neutral-900 rounded border-cyan-400`}>
-                <p css={tw`text-neutral-300 text-sm`}>
-                    你正在编辑一个
-                     <code css={tw`font-mono bg-black rounded py-px px-1`}>.pteroignore</code> 文件.
-                    此处列出的任何文件或目录都将从备份中排除。 通配符支持
-                    使用星号 (<code css={tw`font-mono bg-black rounded py-px px-1`}>*</code>). 你可以
-                    通过在前面加上感叹号来否定先前的规则
-                    (<code css={tw`font-mono bg-black rounded py-px px-1`}>!</code>).
-                </p>
-            </div>
-            }
+            {hash.replace(/^#/, '').endsWith('.pteroignore') && (
+                <div css={tw`mb-4 p-4 border-l-4 bg-neutral-900 rounded border-cyan-400`}>
+                    <p css={tw`text-neutral-300 text-sm`}>
+                        你正在编辑一个 <code css={tw`font-mono bg-black rounded py-px px-1`}>.pteroignore</code>{' '}
+                        文件. 此处列出的任何文件或目录都将从备份中排除。 通配符支持
+                        使用星号 (<code css={tw`font-mono bg-black rounded py-px px-1`}>*</code>).
+                        你可以通过在前面加上感叹号来否定先前的规则 (
+                        <code css={tw`font-mono bg-black rounded py-px px-1`}>!</code>).
+                    </p>
+                </div>
+            )}
             <FileNameModal
                 visible={modalVisible}
                 onDismissed={() => setModalVisible(false)}
@@ -114,13 +111,13 @@ export default () => {
                 }}
             />
             <div css={tw`relative`}>
-                <SpinnerOverlay visible={loading}/>
+                <SpinnerOverlay visible={loading} />
                 <CodemirrorEditor
                     mode={mode}
                     filename={hash.replace(/^#/, '')}
                     onModeChanged={setMode}
                     initialContent={content}
-                    fetchContent={value => {
+                    fetchContent={(value) => {
                         fetchFileContent = value;
                     }}
                     onContentSaved={() => {
@@ -134,27 +131,27 @@ export default () => {
             </div>
             <div css={tw`flex justify-end mt-4`}>
                 <div css={tw`flex-1 sm:flex-none rounded bg-neutral-900 mr-4`}>
-                    <Select value={mode} onChange={e => setMode(e.currentTarget.value)}>
-                        {modes.map(mode => (
+                    <Select value={mode} onChange={(e) => setMode(e.currentTarget.value)}>
+                        {modes.map((mode) => (
                             <option key={`${mode.name}_${mode.mime}`} value={mode.mime}>
                                 {mode.name}
                             </option>
                         ))}
                     </Select>
                 </div>
-                {action === 'edit' ?
+                {action === 'edit' ? (
                     <Can action={'file.update'}>
                         <Button css={tw`flex-1 sm:flex-none`} onClick={() => save()}>
                             保存内容
                         </Button>
                     </Can>
-                    :
+                ) : (
                     <Can action={'file.create'}>
                         <Button css={tw`flex-1 sm:flex-none`} onClick={() => setModalVisible(true)}>
                             创建文件
                         </Button>
                     </Can>
-                }
+                )}
             </div>
         </PageContentBlock>
     );

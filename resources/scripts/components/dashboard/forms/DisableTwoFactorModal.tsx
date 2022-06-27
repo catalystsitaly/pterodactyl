@@ -27,7 +27,7 @@ const DisableTwoFactorModal = () => {
                 updateUserData({ useTotp: false });
                 dismiss();
             })
-            .catch(error => {
+            .catch((error) => {
                 console.error(error);
 
                 clearAndAddHttpError({ error, key: 'account:two-factor' });
@@ -48,13 +48,15 @@ const DisableTwoFactorModal = () => {
         >
             {({ isValid }) => (
                 <Form className={'mb-0'}>
-                    <FlashMessageRender css={tw`mb-6`} byKey={'account:two-factor'}/>
+                    <FlashMessageRender css={tw`mb-6`} byKey={'account:two-factor'} />
                     <Field
                         id={'password'}
                         name={'password'}
                         type={'password'}
                         label={'当前密码'}
-                        description={'为了禁用双重身份验证，您需要提供您的帐户密码。'}
+                        description={
+                            '为了禁用双重身份验证，您需要提供您的帐户密码。'
+                        }
                         autoFocus
                     />
                     <div css={tw`mt-6 text-right`}>

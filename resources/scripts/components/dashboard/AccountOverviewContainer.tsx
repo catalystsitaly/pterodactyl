@@ -11,19 +11,19 @@ import MessageBox from '@/components/MessageBox';
 import { useLocation } from 'react-router-dom';
 
 const Container = styled.div`
-  ${tw`flex flex-wrap`};
+    ${tw`flex flex-wrap`};
 
-  & > div {
-    ${tw`w-full`};
+    & > div {
+        ${tw`w-full`};
 
-    ${breakpoint('sm')`
+        ${breakpoint('sm')`
       width: calc(50% - 1rem);
     `}
 
-    ${breakpoint('md')`
+        ${breakpoint('md')`
       ${tw`w-auto flex-1`};
     `}
-  }
+    }
 `;
 
 export default () => {
@@ -31,28 +31,23 @@ export default () => {
 
     return (
         <PageContentBlock title={'账户概况'}>
-            {state?.twoFactorRedirect &&
-            <MessageBox title={'需要启用双重验证'} type={'error'}>
-                您的帐户必须启用双重身份验证才能继续使用。
-            </MessageBox>
-            }
+            {state?.twoFactorRedirect && (
+                <MessageBox title={'需要启用双重验证'} type={'error'}>
+                    您的帐户必须启用双重身份验证才能继续使用。
+                </MessageBox>
+            )}
 
-            <Container css={[ tw`lg:grid lg:grid-cols-3 mb-10`, state?.twoFactorRedirect ? tw`mt-4` : tw`mt-10` ]}>
+            <Container css={[tw`lg:grid lg:grid-cols-3 mb-10`, state?.twoFactorRedirect ? tw`mt-4` : tw`mt-10`]}>
                 <ContentBox title={'更新密码'} showFlashes={'account:password'}>
-                    <UpdatePasswordForm/>
+                    <UpdatePasswordForm />
                 </ContentBox>
-                <ContentBox
-                    css={tw`mt-8 sm:mt-0 sm:ml-8`}
-                    title={'更新电子邮箱地址'}
-                    showFlashes={'account:email'}
-                >
-                    <UpdateEmailAddressForm/>
+                <ContentBox css={tw`mt-8 sm:mt-0 sm:ml-8`} title={'更新电子邮箱地址'} showFlashes={'account:email'}>
+                    <UpdateEmailAddressForm />
                 </ContentBox>
                 <ContentBox css={tw`md:ml-8 mt-8 md:mt-0`} title={'配置双重验证'}>
-                    <ConfigureTwoFactorForm/>
+                    <ConfigureTwoFactorForm />
                 </ContentBox>
             </Container>
-
         </PageContentBlock>
     );
 };
