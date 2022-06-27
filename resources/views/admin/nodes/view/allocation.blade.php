@@ -305,13 +305,13 @@
 
             formattedItems = formattedItems.slice(0, -2);
             if (selectedItems.length > 5) {
-                formattedItems += ', and ' + (selectedItems.length - 5) + ' other(s)';
+                formattedItems += ', 和另外 ' + (selectedItems.length - 5) + ' 个';
             }
 
             swal({
                 type: 'warning',
                 title: '',
-                text: 'Are you sure you want to delete the following allocations: ' + formattedItems + '?',
+                text: '您确定要删除这些分配吗？' + formattedItems + '.',
                 html: true,
                 showCancelButton: true,
                 showConfirmButton: true,
@@ -338,7 +338,7 @@
 
                     swal({
                         type: 'success',
-                        title: 'Allocations Deleted'
+                        title: '端口已删除'
                     });
                 }).fail(function (jqXHR) {
                     console.error(jqXHR);

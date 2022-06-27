@@ -106,7 +106,7 @@ const EditSubuserModal = ({ subuser }: Props) => {
                 <div css={tw`flex justify-between`}>
                     <h2 css={tw`text-2xl`} ref={ref}>
                         {subuser
-                            ? `${canEditUser ? '可更改' : '不可更改'} permissions for ${subuser.email}`
+                            ? `${canEditUser ? '可更改' : '不可更改'} ${subuser.email} 的权限`
                             : '创建新子用户'}
                     </h2>
                     <div>

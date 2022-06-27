@@ -69,7 +69,7 @@ export default () => {
                                 id={'current_password'}
                                 type={'password'}
                                 name={'current'}
-                                label={'Current Password'}
+                                label={'当前密码'}
                             />
                             <div css={tw`mt-6`}>
                                 <Field

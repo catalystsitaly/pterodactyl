@@ -36,7 +36,7 @@ const schema = object().shape({
     action: string().required().oneOf(['command', 'power', 'backup']),
     payload: string().when('action', {
         is: (v) => v !== 'backup',
-        then: string().required(必须提供有效的任务操作。'),
+        then: string().required('必须提供有效的任务操作。'),
         otherwise: string(),
     }),
     continueOnFailure: boolean(),
