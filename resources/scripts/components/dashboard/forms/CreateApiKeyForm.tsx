@@ -19,10 +19,12 @@ interface Values {
     allowedIps: string;
 }
 
-const CustomTextarea = styled(Textarea)`${tw`h-32`}`;
+const CustomTextarea = styled(Textarea)`
+    ${tw`h-32`}
+`;
 
 export default ({ onKeyCreated }: { onKeyCreated: (key: ApiKey) => void }) => {
-    const [ apiKey, setApiKey ] = useState('');
+    const [apiKey, setApiKey] = useState('');
     const { addError, clearFlashes } = useStoreActions((actions: Actions<ApplicationStore>) => actions.flashes);
 
     const submit = (values: Values, { setSubmitting, resetForm }: FormikHelpers<Values>) => {
@@ -34,7 +36,7 @@ export default ({ onKeyCreated }: { onKeyCreated: (key: ApiKey) => void }) => {
                 setApiKey(`${key.identifier}${secretToken}`);
                 onKeyCreated(key);
             })
-            .catch(error => {
+            .catch((error) => {
                 console.error(error);
 
                 addError({ key: 'account', message: httpErrorToHuman(error) });
@@ -44,11 +46,7 @@ export default ({ onKeyCreated }: { onKeyCreated: (key: ApiKey) => void }) => {
 
     return (
         <>
-            <ApiKeyModal
-                visible={apiKey.length > 0}
-                onModalDismissed={() => setApiKey('')}
-                apiKey={apiKey}
-            />
+            <ApiKeyModal visible={apiKey.length > 0} onModalDismissed={() => setApiKey('')} apiKey={apiKey} />
             <Formik
                 onSubmit={submit}
                 initialValues={{ description: '', allowedIps: '' }}
@@ -59,7 +57,7 @@ export default ({ onKeyCreated }: { onKeyCreated: (key: ApiKey) => void }) => {
             >
                 {({ isSubmitting }) => (
                     <Form>
-                        <SpinnerOverlay visible={isSubmitting}/>
+                        <SpinnerOverlay visible={isSubmitting} />
                         <FormikFieldWrapper
                             label={'描述'}
                             name={'description'}
@@ -71,9 +69,11 @@ export default ({ onKeyCreated }: { onKeyCreated: (key: ApiKey) => void }) => {
                         <FormikFieldWrapper
                             label={'IP 白名单'}
                             name={'allowedIps'}
-                            description={'留空以允许任何 IP 地址使用此 API 密钥，否则在每一行中提供每个 IP 地址。'}
+                            description={
+                                '留空以允许任何 IP 地址使用此 API 密钥，否则在每一行中提供每个 IP 地址。'
+                            }
                         >
-                            <Field name={'allowedIps'} as={CustomTextarea}/>
+                            <Field name={'allowedIps'} as={CustomTextarea} />
                         </FormikFieldWrapper>
                         <div css={tw`flex justify-end mt-6`}>
                             <Button>创建</Button>

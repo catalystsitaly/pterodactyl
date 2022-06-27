@@ -19,8 +19,8 @@ interface Values {
 }
 
 const SetupTwoFactorModal = () => {
-    const [ token, setToken ] = useState<TwoFactorTokenData | null>(null);
-    const [ recoveryTokens, setRecoveryTokens ] = useState<string[]>([]);
+    const [token, setToken] = useState<TwoFactorTokenData | null>(null);
+    const [recoveryTokens, setRecoveryTokens] = useState<string[]>([]);
 
     const { dismiss, setPropOverrides } = useContext(ModalContext);
     const updateUserData = useStoreActions((actions: Actions<ApplicationStore>) => actions.user.updateUserData);
@@ -29,31 +29,31 @@ const SetupTwoFactorModal = () => {
     useEffect(() => {
         getTwoFactorTokenData()
             .then(setToken)
-            .catch(error => {
+            .catch((error) => {
                 console.error(error);
                 clearAndAddHttpError({ error, key: 'account:two-factor' });
             });
     }, []);
 
     const submit = ({ code }: Values, { setSubmitting }: FormikHelpers<Values>) => {
-        setPropOverrides(state => ({ ...state, showSpinnerOverlay: true }));
+        setPropOverrides((state) => ({ ...state, showSpinnerOverlay: true }));
         enableAccountTwoFactor(code)
-            .then(tokens => {
+            .then((tokens) => {
                 setRecoveryTokens(tokens);
             })
-            .catch(error => {
+            .catch((error) => {
                 console.error(error);
 
                 clearAndAddHttpError({ error, key: 'account:two-factor' });
             })
             .then(() => {
                 setSubmitting(false);
-                setPropOverrides(state => ({ ...state, showSpinnerOverlay: false }));
+                setPropOverrides((state) => ({ ...state, showSpinnerOverlay: false }));
             });
     };
 
     useEffect(() => {
-        setPropOverrides(state => ({
+        setPropOverrides((state) => ({
             ...state,
             closeOnEscape: !recoveryTokens.length,
             closeOnBackground: !recoveryTokens.length,
@@ -64,7 +64,7 @@ const SetupTwoFactorModal = () => {
                 updateUserData({ useTotp: true });
             }
         };
-    }, [ recoveryTokens ]);
+    }, [recoveryTokens]);
 
     return (
         <Formik
@@ -76,7 +76,7 @@ const SetupTwoFactorModal = () => {
                     .matches(/^(\d){6}$/, '验证码必须是 6 位数字。'),
             })}
         >
-            {recoveryTokens.length > 0 ?
+            {recoveryTokens.length > 0 ? (
                 <>
                     <h2 css={tw`text-2xl mb-4`}>已启用双重身份验证</h2>
                     <p css={tw`text-neutral-300`}>
@@ -89,7 +89,11 @@ const SetupTwoFactorModal = () => {
                         将它们记下来妥善保管，例如使用密码管理器等。
                     </p>
                     <pre css={tw`text-sm mt-4 rounded font-mono bg-neutral-900 p-4`}>
-                        {recoveryTokens.map(token => <code key={token} css={tw`block mb-1`}>{token}</code>)}
+                        {recoveryTokens.map((token) => (
+                            <code key={token} css={tw`block mb-1`}>
+                                {token}
+                            </code>
+                        ))}
                     </pre>
                     <div css={tw`text-right`}>
                         <Button css={tw`mt-6`} onClick={dismiss}>
@@ -97,24 +101,26 @@ const SetupTwoFactorModal = () => {
                         </Button>
                     </div>
                 </>
-                :
+            ) : (
                 <Form css={tw`mb-0`}>
-                    <FlashMessageRender css={tw`mb-6`} byKey={'account:two-factor'}/>
+                    <FlashMessageRender css={tw`mb-6`} byKey={'account:two-factor'} />
                     <div css={tw`flex flex-wrap`}>
                         <div css={tw`w-full md:flex-1`}>
                             <div css={tw`w-32 h-32 md:w-64 md:h-64 bg-neutral-600 p-2 rounded mx-auto`}>
-                                {!token ?
+                                {!token ? (
                                     <img
-                                        src={'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII='}
+                                        src={
+                                            'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII='
+                                        }
                                         css={tw`w-64 h-64 rounded`}
                                     />
-                                    :
+                                ) : (
                                     <QRCode
                                         renderAs={'svg'}
                                         value={token.image_url_data}
                                         css={tw`w-full h-full shadow-none rounded-none`}
                                     />
-                                }
+                                )}
                             </div>
                         </div>
                         <div css={tw`w-full mt-6 md:mt-0 md:flex-1 md:flex md:flex-col`}>
@@ -124,20 +130,20 @@ const SetupTwoFactorModal = () => {
                                     name={'code'}
                                     type={'text'}
                                     title={'来自身份验证器的代码'}
-                                    description={'扫描二维码图像后，输入验证器设备中的代码。'}
+                                    description={
+                                        '扫描二维码图像后，输入验证器设备中的代码。'
+                                    }
                                 />
-                                {token &&
-                                <div css={tw`mt-4 pt-4 border-t border-neutral-500 text-neutral-200`}>
-                                    或者，将以下令牌输入到您的身份验证器应用程序中：
-                                    <CopyOnClick text={token.secret}>
-                                        <div css={tw`text-sm bg-neutral-900 rounded mt-2 py-2 px-4 font-mono`}>
-                                            <code css={tw`font-mono`}>
-                                                {token.secret}
-                                            </code>
-                                        </div>
-                                    </CopyOnClick>
-                                </div>
-                                }
+                                {token && (
+                                    <div css={tw`mt-4 pt-4 border-t border-neutral-500 text-neutral-200`}>
+                                        或者，将以下令牌输入到您的身份验证器应用程序中：
+                                        <CopyOnClick text={token.secret}>
+                                            <div css={tw`text-sm bg-neutral-900 rounded mt-2 py-2 px-4 font-mono`}>
+                                                <code css={tw`font-mono`}>{token.secret}</code>
+                                            </div>
+                                        </CopyOnClick>
+                                    </div>
+                                )}
                             </div>
                             <div css={tw`mt-6 md:mt-0 text-right`}>
                                 <Button>设置</Button>
@@ -145,7 +151,7 @@ const SetupTwoFactorModal = () => {
                         </div>
                     </div>
                 </Form>
-            }
+            )}
         </Formik>
     );
 };

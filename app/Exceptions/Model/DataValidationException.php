@@ -2,6 +2,7 @@
 
 namespace Pterodactyl\Exceptions\Model;
 
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Contracts\Validation\Validator;
 use Pterodactyl\Exceptions\PterodactylException;
 use Illuminate\Contracts\Support\MessageProvider;
@@ -11,21 +12,30 @@ class DataValidationException extends PterodactylException implements HttpExcept
 {
     /**
      * The validator instance.
-     *
-     * @var \Illuminate\Contracts\Validation\Validator
      */
-    public $validator;
+    protected Validator $validator;
+
+    /**
+     * The underlying model instance that triggered this exception.
+     */
+    protected Model $model;
 
     /**
      * DataValidationException constructor.
      */
-    public function __construct(Validator $validator)
+    public function __construct(Validator $validator, Model $model)
     {
-        parent::__construct(
-            '执行数据库写入操作时遇到数据完整性异常。 ' . $validator->errors()->toJson()
+        $message = sprintf(
+            '无法保存 %s[%s]: 验证数据失败: %s',
+            get_class($model),
+            $model->getKey(),
+            $validator->errors()->toJson()
         );
 
+        parent::__construct($message);
+
         $this->validator = $validator;
+        $this->model = $model;
     }
 
     /**
@@ -54,5 +64,15 @@ class DataValidationException extends PterodactylException implements HttpExcept
     public function getHeaders()
     {
         return [];
+    }
+
+    public function getValidator(): Validator
+    {
+        return $this->validator;
+    }
+
+    public function getModel(): Model
+    {
+        return $this->model;
     }
 }

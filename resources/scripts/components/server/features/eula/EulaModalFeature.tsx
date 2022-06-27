@@ -9,13 +9,13 @@ import useFlash from '@/plugins/useFlash';
 import { SocketEvent, SocketRequest } from '@/components/server/events';
 
 const EulaModalFeature = () => {
-    const [ visible, setVisible ] = useState(false);
-    const [ loading, setLoading ] = useState(false);
+    const [visible, setVisible] = useState(false);
+    const [loading, setLoading] = useState(false);
 
-    const uuid = ServerContext.useStoreState(state => state.server.data!.uuid);
-    const status = ServerContext.useStoreState(state => state.status.value);
+    const uuid = ServerContext.useStoreState((state) => state.server.data!.uuid);
+    const status = ServerContext.useStoreState((state) => state.status.value);
     const { clearFlashes, clearAndAddHttpError } = useFlash();
-    const { connected, instance } = ServerContext.useStoreState(state => state.socket);
+    const { connected, instance } = ServerContext.useStoreState((state) => state.socket);
 
     useEffect(() => {
         if (!connected || !instance || status === 'running') return;
@@ -31,7 +31,7 @@ const EulaModalFeature = () => {
         return () => {
             instance.removeListener(SocketEvent.CONSOLE_OUTPUT, listener);
         };
-    }, [ connected, instance, status ]);
+    }, [connected, instance, status]);
 
     const onAcceptEULA = () => {
         setLoading(true);
@@ -46,7 +46,7 @@ const EulaModalFeature = () => {
                 setLoading(false);
                 setVisible(false);
             })
-            .catch(error => {
+            .catch((error) => {
                 console.error(error);
                 clearAndAddHttpError({ key: 'feature:eula', error });
             })
@@ -58,26 +58,32 @@ const EulaModalFeature = () => {
     }, []);
 
     return (
-        <Modal visible={visible} onDismissed={() => setVisible(false)} closeOnBackground={false} showSpinnerOverlay={loading}>
-            <FlashMessageRender key={'feature:eula'} css={tw`mb-4`}/>
+        <Modal
+            visible={visible}
+            onDismissed={() => setVisible(false)}
+            closeOnBackground={false}
+            showSpinnerOverlay={loading}
+        >
+            <FlashMessageRender key={'feature:eula'} css={tw`mb-4`} />
             <h2 css={tw`text-2xl mb-4 text-neutral-100`}>同意 Minecraft&reg; EULA 协议</h2>
             <p css={tw`text-neutral-200`}>
-                    请点击 {'"我接受"'} 来同意&nbsp;
+                请点击下面的 {'"我接受"'} 来表示你同意&nbsp;
                 <a
                     target={'_blank'}
                     css={tw`text-primary-300 underline transition-colors duration-150 hover:text-primary-400`}
                     rel={'noreferrer noopener'}
-                    href="https://account.mojang.com/documents/minecraft_eula"
+                    href='https://account.mojang.com/documents/minecraft_eula'
                 >
-                        Minecraft&reg; EULA 协议
-                </a>。 否则服务器将无法正常启动。
+                    Minecraft&reg; EULA 协议
+                </a>。否则服务器将无法正常启动。
+                .
             </p>
             <div css={tw`mt-8 sm:flex items-center justify-end`}>
                 <Button isSecondary onClick={() => setVisible(false)} css={tw`w-full sm:w-auto border-transparent`}>
-                        不接受
+                    不接受
                 </Button>
                 <Button onClick={onAcceptEULA} css={tw`mt-4 sm:mt-0 sm:ml-4 w-full sm:w-auto`}>
-                        我接受
+                    我接受
                 </Button>
             </div>
         </Modal>

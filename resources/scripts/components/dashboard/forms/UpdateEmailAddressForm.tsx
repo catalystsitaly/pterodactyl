@@ -29,17 +29,21 @@ export default () => {
         clearFlashes('account:email');
 
         updateEmail({ ...values })
-            .then(() => addFlash({
-                type: 'success',
-                key: 'account:email',
-                message: '您的首选电子邮件地址已更新。',
-            }))
-            .catch(error => addFlash({
-                type: 'error',
-                key: 'account:email',
-                title: '错误',
-                message: httpErrorToHuman(error),
-            }))
+            .then(() =>
+                addFlash({
+                    type: 'success',
+                    key: 'account:email',
+                    message: '您的首选电子邮件地址已更新。',
+                })
+            )
+            .catch((error) =>
+                addFlash({
+                    type: 'error',
+                    key: 'account:email',
+                    title: '错误',
+                    message: httpErrorToHuman(error),
+                })
+            )
             .then(() => {
                 resetForm();
                 setSubmitting(false);
@@ -47,39 +51,28 @@ export default () => {
     };
 
     return (
-        <Formik
-            onSubmit={submit}
-            validationSchema={schema}
-            initialValues={{ email: user!.email, password: '' }}
-        >
-            {
-                ({ isSubmitting, isValid }) => (
-                    <React.Fragment>
-                        <SpinnerOverlay size={'large'} visible={isSubmitting}/>
-                        <Form css={tw`m-0`}>
+        <Formik onSubmit={submit} validationSchema={schema} initialValues={{ email: user!.email, password: '' }}>
+            {({ isSubmitting, isValid }) => (
+                <React.Fragment>
+                    <SpinnerOverlay size={'large'} visible={isSubmitting} />
+                    <Form css={tw`m-0`}>
+                        <Field id={'current_email'} type={'email'} name={'email'} label={'Email'} />
+                        <div css={tw`mt-6`}>
                             <Field
-                                id={'current_email'}
-                                type={'email'}
-                                name={'email'}
-                                label={'邮箱地址'}
+                                id={'confirm_password'}
+                                type={'password'}
+                                name={'password'}
+                                label={'确认密码'}
                             />
-                            <div css={tw`mt-6`}>
-                                <Field
-                                    id={'confirm_password'}
-                                    type={'password'}
-                                    name={'password'}
-                                    label={'确认密码'}
-                                />
-                            </div>
-                            <div css={tw`mt-6`}>
-                                <Button size={'small'} disabled={isSubmitting || !isValid}>
-                                    更新邮箱地址
-                                </Button>
-                            </div>
-                        </Form>
-                    </React.Fragment>
-                )
-            }
+                        </div>
+                        <div css={tw`mt-6`}>
+                            <Button size={'small'} disabled={isSubmitting || !isValid}>
+                                更新邮箱地址
+                            </Button>
+                        </div>
+                    </Form>
+                </React.Fragment>
+            )}
         </Formik>
     );
 };

@@ -18,15 +18,15 @@ export default () => {
     const { search } = useLocation();
     const defaultPage = Number(new URLSearchParams(search).get('page') || '1');
 
-    const [ page, setPage ] = useState((!isNaN(defaultPage) && defaultPage > 0) ? defaultPage : 1);
+    const [page, setPage] = useState(!isNaN(defaultPage) && defaultPage > 0 ? defaultPage : 1);
     const { clearFlashes, clearAndAddHttpError } = useFlash();
-    const uuid = useStoreState(state => state.user.data!.uuid);
-    const rootAdmin = useStoreState(state => state.user.data!.rootAdmin);
-    const [ showOnlyAdmin, setShowOnlyAdmin ] = usePersistedState(`${uuid}:show_all_servers`, false);
+    const uuid = useStoreState((state) => state.user.data!.uuid);
+    const rootAdmin = useStoreState((state) => state.user.data!.rootAdmin);
+    const [showOnlyAdmin, setShowOnlyAdmin] = usePersistedState(`${uuid}:show_all_servers`, false);
 
     const { data: servers, error } = useSWR<PaginatedResult<Server>>(
-        [ '/api/client/servers', (showOnlyAdmin && rootAdmin), page ],
-        () => getServers({ page, type: (showOnlyAdmin && rootAdmin) ? 'admin' : undefined }),
+        ['/api/client/servers', showOnlyAdmin && rootAdmin, page],
+        () => getServers({ page, type: showOnlyAdmin && rootAdmin ? 'admin' : undefined })
     );
 
     useEffect(() => {
@@ -34,58 +34,53 @@ export default () => {
         if (servers.pagination.currentPage > 1 && !servers.items.length) {
             setPage(1);
         }
-    }, [ servers?.pagination.currentPage ]);
+    }, [servers?.pagination.currentPage]);
 
     useEffect(() => {
         // Don't use react-router to handle changing this part of the URL, otherwise it
         // triggers a needless re-render. We just want to track this in the URL incase the
         // user refreshes the page.
         window.history.replaceState(null, document.title, `/${page <= 1 ? '' : `?page=${page}`}`);
-    }, [ page ]);
+    }, [page]);
 
     useEffect(() => {
         if (error) clearAndAddHttpError({ key: 'dashboard', error });
         if (!error) clearFlashes('dashboard');
-    }, [ error ]);
+    }, [error]);
 
     return (
         <PageContentBlock title={'仪表盘'} showFlashKey={'dashboard'}>
-            {rootAdmin &&
-            <div css={tw`mb-2 flex justify-end items-center`}>
-                <p css={tw`uppercase text-xs text-neutral-400 mr-2`}>
-                    {showOnlyAdmin ? '显示其他人的服务器' : '显示你的服务器'}
-                </p>
-                <Switch
-                    name={'show_all_servers'}
-                    defaultChecked={showOnlyAdmin}
-                    onChange={() => setShowOnlyAdmin(s => !s)}
-                />
-            </div>
-            }
-            {!servers ?
-                <Spinner centered size={'large'}/>
-                :
+            {rootAdmin && (
+                <div css={tw`mb-2 flex justify-end items-center`}>
+                    <p css={tw`uppercase text-xs text-neutral-400 mr-2`}>
+                        {showOnlyAdmin ? "显示其他人的服务器" : '显示你的服务器'}
+                    </p>
+                    <Switch
+                        name={'show_all_servers'}
+                        defaultChecked={showOnlyAdmin}
+                        onChange={() => setShowOnlyAdmin((s) => !s)}
+                    />
+                </div>
+            )}
+            {!servers ? (
+                <Spinner centered size={'large'} />
+            ) : (
                 <Pagination data={servers} onPageSelect={setPage}>
-                    {({ items }) => (
-                        items.length > 0 ?
+                    {({ items }) =>
+                        items.length > 0 ? (
                             items.map((server, index) => (
-                                <ServerRow
-                                    key={server.uuid}
-                                    server={server}
-                                    css={index > 0 ? tw`mt-2` : undefined}
-                                />
+                                <ServerRow key={server.uuid} server={server} css={index > 0 ? tw`mt-2` : undefined} />
                             ))
-                            :
+                        ) : (
                             <p css={tw`text-center text-sm text-neutral-400`}>
-                                {showOnlyAdmin ?
-                                    '这里没有服务器可显示。'
-                                    :
-                                    '你的账户下没有关联的服务器实例。'
-                                }
+                                {showOnlyAdmin
+                                    ? '这里没有服务器可显示。'
+                                    : '你的账户下没有关联的服务器实例。'}
                             </p>
-                    )}
+                        )
+                    }
                 </Pagination>
-            }
+            )}
         </PageContentBlock>
     );
 };

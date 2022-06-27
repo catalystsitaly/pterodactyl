@@ -10,8 +10,8 @@ import { Button } from '@/components/elements/button/index';
 import { Dialog } from '@/components/elements/dialog';
 
 export default () => {
-    const uuid = ServerContext.useStoreState(state => state.server.data!.uuid);
-    const [ modalVisible, setModalVisible ] = useState(false);
+    const uuid = ServerContext.useStoreState((state) => state.server.data!.uuid);
+    const [modalVisible, setModalVisible] = useState(false);
     const { addFlash, clearFlashes } = useStoreActions((actions: Actions<ApplicationStore>) => actions.flashes);
 
     const reinstall = () => {
@@ -24,7 +24,7 @@ export default () => {
                     message: '您的服务器已开始重新安装过程。',
                 });
             })
-            .catch(error => {
+            .catch((error) => {
                 console.error(error);
 
                 addFlash({ key: 'settings', type: 'error', message: httpErrorToHuman(error) });
