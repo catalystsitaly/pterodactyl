@@ -12,23 +12,23 @@ return [
     |
     */
 
-    'accepted' => 'The :attribute must be accepted.',
-    'active_url' => 'The :attribute is not a valid URL.',
-    'after' => 'The :attribute must be a date after :date.',
-    'after_or_equal' => 'The :attribute must be a date after or equal to :date.',
-    'alpha' => 'The :attribute may only contain letters.',
-    'alpha_dash' => 'The :attribute may only contain letters, numbers, and dashes.',
-    'alpha_num' => 'The :attribute may only contain letters and numbers.',
-    'array' => 'The :attribute must be an array.',
-    'before' => 'The :attribute must be a date before :date.',
-    'before_or_equal' => 'The :attribute must be a date before or equal to :date.',
+    'accepted' => '必须接受 :attribute 。',
+    'active_url' => ':attribute 不是有效的 URL。',
+    'after' => ':attribute 的日期必须在 :date 之后。',
+    'after_or_equal' => ':attribute 的日期必须是晚于或等于 :date。',
+    'alpha' => ':attribute 只能包含字母。',
+    'alpha_dash' => ':attribute 只能包含字母、数字和破折号。',
+    'alpha_num' => ':attribute 只能包含字母和数字。',
+    'array' => ':attribute 必须是一个数组。',
+    'before' => ':attribute 的日期必须在 :date 之前。',
+    'before_or_equal' => ':attribute 的日期必须是早于或等于 :date。',
     'between' => [
-        'numeric' => 'The :attribute must be between :min and :max.',
+        'numeric' => ':attribute 必须介于 :min 和 :max 之间。',
         'file' => 'The :attribute must be between :min and :max kilobytes.',
-        'string' => 'The :attribute must be between :min and :max characters.',
+        'string' => ':attribute 必须介于 :min 和 :max 字符之间。',
         'array' => 'The :attribute must have between :min and :max items.',
     ],
-    'boolean' => 'The :attribute field must be true or false.',
+    'boolean' => ':attribute 字段必须是 true 或 false。',
     'confirmed' => 'The :attribute confirmation does not match.',
     'date' => 'The :attribute is not a valid date.',
     'date_format' => 'The :attribute does not match the format :format.',
@@ -100,7 +100,7 @@ return [
 
     // Internal validation logic for Pterodactyl
     'internal' => [
-        'variable_value' => ':env variable',
-        'invalid_password' => 'The password provided was invalid for this account.',
+        'variable_value' => ':env 变量',
+        'invalid_password' => '提供的密码对此帐户无效。',
     ],
 ];
