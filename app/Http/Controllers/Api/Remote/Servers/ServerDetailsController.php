@@ -111,7 +111,7 @@ class ServerDetailsController extends Controller
         $servers = Server::query()
             ->with([
                 'activity' => fn ($builder) => $builder
-                    ->where('activity_logs.event', 'server:backup.restore-started')
+                    ->where('activity_logs.event', '服务器:备份.恢复开始')
                     ->latest('timestamp'),
             ])
             ->where('node_id', $node->id)
@@ -127,7 +127,7 @@ class ServerDetailsController extends Controller
                     if ($subject = $activity->subjects->where('subject_type', 'backup')->first()) {
                         // Just create a new audit entry for this event and update the server state
                         // so that power actions, file management, and backups can resume as normal.
-                        Activity::event('server:backup.restore-failed')
+                        Activity::event('服务器:备份.恢复失败')
                             ->subject($server, $subject->subject)
                             ->property('name', $subject->subject->name)
                             ->log();

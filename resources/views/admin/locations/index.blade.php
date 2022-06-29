@@ -1,20 +1,19 @@
 {{-- Pterodactyl - Panel --}}
 {{-- Copyright (c) 2015 - 2017 Dane Everitt <dane@daneeveritt.com> --}}
-{{-- Simplified Chinese Translation Copyright (c) 2021 - 2022 Ice Ling <iceling@ilwork.cn> --}}
 
 {{-- This software is licensed under the terms of the MIT license. --}}
 {{-- https://opensource.org/licenses/MIT --}}
 @extends('layouts.admin')
 
 @section('title')
-    节点服务器组
+    地域
 @endsection
 
 @section('content-header')
-    <h1>节点服务器组<small>将节点服务器分组管理</small></h1>
+    <h1>地域<small>将节点服务器分组管理</small></h1>
     <ol class="breadcrumb">
         <li><a href="{{ route('admin.index') }}">管理</a></li>
-        <li class="active">节点服务器组</li>
+        <li class="active">地域</li>
     </ol>
 @endsection
 
@@ -23,7 +22,7 @@
     <div class="col-xs-12">
         <div class="box box-primary">
             <div class="box-header with-border">
-                <h3 class="box-title">节点服务器组列表</h3>
+                <h3 class="box-title">地域列表</h3>
                 <div class="box-tools">
                     <button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#newLocationModal">新建</button>
                 </div>
@@ -59,19 +58,19 @@
             <form action="{{ route('admin.locations') }}" method="POST">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title">创建节点服务器组</h4>
+                    <h4 class="modal-title">创建地域</h4>
                 </div>
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-md-12">
                             <label for="pShortModal" class="form-label">标识码</label>
                             <input type="text" name="short" id="pShortModal" class="form-control" />
-                            <p class="text-muted small">用于将此节点服务器组与其他节点服务器区分开来的简短标识符。 必须介于 1 到 60 个字符之间, 例如, <code>us.nyc.lvl3</code>.</p>
+                            <p class="text-muted small">用于将此地域与其他节点服务器区分开来的简短标识符。 必须介于 1 到 60 个字符之间, 例如, <code>us.nyc.lvl3</code>.</p>
                         </div>
                         <div class="col-md-12">
                             <label for="pLongModal" class="form-label">描述</label>
                             <textarea name="long" id="pLongModal" class="form-control" rows="4"></textarea>
-                            <p class="text-muted small">此节点服务器组的详细说明，最多不应超过 191 个字符.</p>
+                            <p class="text-muted small">此地域的详细说明，最多不应超过 191 个字符.</p>
                         </div>
                     </div>
                 </div>

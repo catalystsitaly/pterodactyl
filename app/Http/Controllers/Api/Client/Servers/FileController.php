@@ -76,7 +76,7 @@ class FileController extends ClientApiController
             config('pterodactyl.files.max_edit_size')
         );
 
-        Activity::event('server:file.read')->property('file', $request->get('file'))->log();
+        Activity::event('服务器:文件.阅读')->property('file', $request->get('file'))->log();
 
         return new Response($response, Response::HTTP_OK, ['Content-Type' => 'text/plain']);
     }
@@ -99,7 +99,7 @@ class FileController extends ClientApiController
             ])
             ->handle($server->node, $request->user()->id . $server->uuid);
 
-        Activity::event('server:file.download')->property('file', $request->get('file'))->log();
+        Activity::event('服务器:文件.下载')->property('file', $request->get('file'))->log();
 
         return [
             'object' => 'signed_url',
@@ -122,7 +122,7 @@ class FileController extends ClientApiController
     {
         $this->fileRepository->setServer($server)->putContent($request->get('file'), $request->getContent());
 
-        Activity::event('server:file.write')->property('file', $request->get('file'))->log();
+        Activity::event('服务器:文件.编写')->property('file', $request->get('file'))->log();
 
         return new JsonResponse([], Response::HTTP_NO_CONTENT);
     }
@@ -138,7 +138,7 @@ class FileController extends ClientApiController
             ->setServer($server)
             ->createDirectory($request->input('name'), $request->input('root', '/'));
 
-        Activity::event('server:file.create-directory')
+        Activity::event('服务器:文件.创建目录')
             ->property('name', $request->input('name'))
             ->property('directory', $request->input('root'))
             ->log();
@@ -157,7 +157,7 @@ class FileController extends ClientApiController
             ->setServer($server)
             ->renameFiles($request->input('root'), $request->input('files'));
 
-        Activity::event('server:file.rename')
+        Activity::event('服务器:文件.重命名')
             ->property('directory', $request->input('root'))
             ->property('files', $request->input('files'))
             ->log();
@@ -176,7 +176,7 @@ class FileController extends ClientApiController
             ->setServer($server)
             ->copyFile($request->input('location'));
 
-        Activity::event('server:file.copy')->property('file', $request->input('location'))->log();
+        Activity::event('服务器:文件.复制')->property('file', $request->input('location'))->log();
 
         return new JsonResponse([], Response::HTTP_NO_CONTENT);
     }
@@ -191,7 +191,7 @@ class FileController extends ClientApiController
             $request->input('files')
         );
 
-        Activity::event('server:file.compress')
+        Activity::event('服务器:文件.压缩')
             ->property('directory', $request->input('root'))
             ->property('files', $request->input('files'))
             ->log();
@@ -213,7 +213,7 @@ class FileController extends ClientApiController
             $request->input('file')
         );
 
-        Activity::event('server:file.decompress')
+        Activity::event('服务器:文件.解压')
             ->property('directory', $request->input('root'))
             ->property('files', $request->input('file'))
             ->log();
@@ -233,7 +233,7 @@ class FileController extends ClientApiController
             $request->input('files')
         );
 
-        Activity::event('server:file.delete')
+        Activity::event('服务器:文件.删除')
             ->property('directory', $request->input('root'))
             ->property('files', $request->input('files'))
             ->log();
@@ -269,7 +269,7 @@ class FileController extends ClientApiController
             $request->safe(['filename', 'use_header', 'foreground'])
         );
 
-        Activity::event('server:file.pull')
+        Activity::event('服务器:文件.拉取')
             ->property('directory', $request->input('directory'))
             ->property('url', $request->input('url'))
             ->log();
