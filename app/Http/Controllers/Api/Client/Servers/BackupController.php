@@ -90,7 +90,7 @@ class BackupController extends ClientApiController
 
         $backup = $action->handle($server, $request->input('name'));
 
-        Activity::event('服务器:备份.开始')
+        Activity::event('server:backup.start')
             ->subject($backup)
             ->property(['name' => $backup->name, 'locked' => (bool) $request->input('is_locked')])
             ->log();
@@ -112,7 +112,7 @@ class BackupController extends ClientApiController
             throw new AuthorizationException();
         }
 
-        $action = $backup->is_locked ? '服务器:备份.解锁' : '服务器:备份.锁定';
+        $action = $backup->is_locked ? 'server:backup.unlock' : 'server:backup.lock';
 
         $backup->update(['is_locked' => !$backup->is_locked]);
 
@@ -153,7 +153,7 @@ class BackupController extends ClientApiController
 
         $this->deleteBackupService->handle($backup);
 
-        Activity::event('服务器:备份.删除')
+        Activity::event('server:backup.delete')
             ->subject($backup)
             ->property(['name' => $backup->name, 'failed' => !$backup->is_successful])
             ->log();
@@ -181,7 +181,7 @@ class BackupController extends ClientApiController
 
         $url = $this->downloadLinkService->handle($backup, $request->user());
 
-        Activity::event('服务器:备份.下载')->subject($backup)->property('name', $backup->name)->log();
+        Activity::event('server:backup.download')->subject($backup)->property('name', $backup->name)->log();
 
         return new JsonResponse([
             'object' => 'signed_url',
@@ -216,7 +216,7 @@ class BackupController extends ClientApiController
             throw new BadRequestHttpException('This backup cannot be restored at this time: not completed or failed.');
         }
 
-        $log = Activity::event('服务器:备份.恢复')
+        $log = Activity::event('server:backup.restore')
             ->subject($backup)
             ->property(['name' => $backup->name, 'truncate' => $request->input('truncate')]);
 

@@ -45,7 +45,7 @@ class BackupStatusController extends Controller
             throw new BadRequestHttpException('Cannot update the status of a backup that is already marked as completed.');
         }
 
-        $action = $request->boolean('successful') ? '服务器:备份.完成' : '服务器:备份.失败';
+        $action = $request->boolean('successful') ? 'server:backup.complete' : 'server:backup.fail';
         $log = Activity::event($action)->subject($model, $model->server)->property('name', $model->name);
 
         $log->transaction(function () use ($model, $request) {
@@ -92,7 +92,7 @@ class BackupStatusController extends Controller
 
         $model->server->update(['status' => null]);
 
-        Activity::event($request->boolean('successful') ? '服务器:备份.恢复完成' : 'server.backup.恢复失败')
+        Activity::event($request->boolean('successful') ? 'server:backup.restore-complete' : 'server.backup.restore-failed')
             ->subject($model, $model->server)
             ->property('name', $model->name)
             ->log();
