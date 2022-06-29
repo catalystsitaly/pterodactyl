@@ -36,7 +36,7 @@ class FileUploadController extends ClientApiController
      */
     public function __invoke(UploadFileRequest $request, Server $server)
     {
-        Activity::event('server:file.upload')->log();
+        Activity::event('服务器:文件.上传')->log();
 
         return new JsonResponse([
             'object' => 'signed_url',

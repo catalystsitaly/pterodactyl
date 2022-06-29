@@ -95,7 +95,7 @@ class SubuserController extends ClientApiController
             $this->getDefaultPermissions($request)
         );
 
-        Activity::event('server:subuser.create')
+        Activity::event('服务器:子用户.创建')
             ->subject($response->user)
             ->property(['email' => $request->input('email'), 'permissions' => $this->getDefaultPermissions($request)])
             ->log();
