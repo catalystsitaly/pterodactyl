@@ -55,7 +55,7 @@
                         </div>
                     </div>
                     <div class="form-group col-xs-12">
-                        <label for="name" class="control-label">节点服务器组</label>
+                        <label for="name" class="control-label">地域</label>
                         <div>
                             <select name="location_id" class="form-control">
                                 @foreach($locations as $location)
@@ -77,7 +77,7 @@
                             <input type="text" autocomplete="off" name="fqdn" class="form-control" value="{{ old('fqdn', $node->fqdn) }}" />
                         </div>
                         <p class="text-muted"><small>请输入节点服务器域名 (例如 <code>node.example.com</code>) 用来连接至守护进程. 仅当您没有为此节点使用 SSL 时才可以使用 IP 地址.
-                                <a tabindex="0" data-toggle="popover" data-trigger="focus" title="为什么需要(FQDN)子域名？" data-content="为了保护您的服务器与此节点之间的通信，我们使用 SSL。 我们无法为 IP 地址生成 SSL 证书，因此您需要提供(FQDN)子域名。">为什么？</a>
+                                <a tabindex="0" data-toggle="popover" data-trigger="focus" title="为什么需要(FQDN)域名？" data-content="为了保护您的服务器与此节点之间的通信，我们使用 SSL。 我们无法为 IP 地址生成 SSL 证书，因此您需要提供(FQDN)域名。">为什么？</a>
                             </small></p>
                     </div>
                     <div class="form-group col-xs-12">

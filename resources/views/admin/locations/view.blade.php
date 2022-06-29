@@ -1,20 +1,19 @@
 {{-- Pterodactyl - Panel --}}
 {{-- Copyright (c) 2015 - 2017 Dane Everitt <dane@daneeveritt.com> --}}
-{{-- Simplified Chinese Translation Copyright (c) 2021 - 2022 Ice Ling <iceling@ilwork.cn> --}}
 
 {{-- This software is licensed under the terms of the MIT license. --}}
 {{-- https://opensource.org/licenses/MIT --}}
 @extends('layouts.admin')
 
 @section('title')
-    节点服务器组 &rarr; 概览 &rarr; {{ $location->short }}
+    地域 &rarr; 概览 &rarr; {{ $location->short }}
 @endsection
 
 @section('content-header')
     <h1>{{ $location->short }}<small>{{ str_limit($location->long, 75) }}</small></h1>
     <ol class="breadcrumb">
         <li><a href="{{ route('admin.index') }}">管理</a></li>
-        <li><a href="{{ route('admin.locations') }}">节点服务器组</a></li>
+        <li><a href="{{ route('admin.locations') }}">地域</a></li>
         <li class="active">{{ $location->short }}</li>
     </ol>
 @endsection

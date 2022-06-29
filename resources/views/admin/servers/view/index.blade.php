@@ -87,11 +87,11 @@
                                     @endif
                                     /
                                     @if($server->swap === 0)
-                                        <code data-toggle="tooltip" data-placement="top" title="Swap Space">未设置</code>
+                                        <code data-toggle="tooltip" data-placement="top" title="交换空间">未设置</code>
                                     @elseif($server->swap === -1)
-                                        <code data-toggle="tooltip" data-placement="top" title="Swap Space">无限制</code>
+                                        <code data-toggle="tooltip" data-placement="top" title="交换空间">无限制</code>
                                     @else
-                                        <code data-toggle="tooltip" data-placement="top" title="Swap Space"> {{ $server->swap }}MB</code>
+                                        <code data-toggle="tooltip" data-placement="top" title="交换空间"> {{ $server->swap }}MB</code>
                                     @endif
                                 </td>
                             </tr>
@@ -114,7 +114,7 @@
                                 <td><code>{{ $server->allocation->ip }}:{{ $server->allocation->port }}</code></td>
                             </tr>
                             <tr>
-                                <td>连接域名</td>
+                                <td>连接别名</td>
                                 <td>
                                     @if($server->allocation->alias !== $server->allocation->ip)
                                         <code>{{ $server->allocation->alias }}:{{ $server->allocation->port }}</code>

@@ -48,7 +48,17 @@ export default forwardRef<HTMLFormElement, Props>(({ title, ...props }, ref) => 
                 target={'_blank'}
                 css={tw`no-underline text-neutral-500 hover:text-neutral-300`}
             >
-                Pterodactyl Software which Sinicizated by VLssu.COM
+                Pterodactyl&reg;
+            </a>
+            &nbsp;&copy; 2015 - {new Date().getFullYear()}
+            &nbsp;Software which Sinicizated by&nbsp;
+            <a
+                rel={'noopener nofollow noreferrer'}
+                href={'https://vlssu.com'}
+                target={'_blank'}
+                css={tw`no-underline text-neutral-500 hover:text-neutral-300`}
+            >
+                VLssu&reg;
             </a>
         </p>
     </Container>
