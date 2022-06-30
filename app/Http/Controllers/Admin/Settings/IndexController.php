@@ -75,7 +75,7 @@ class IndexController extends Controller
         }
 
         $this->kernel->call('queue:restart');
-        $this->alert->success('面板设置已成功更新，队列工作程序已重新启动以应用这些更改。')->flash();
+        $this->alert->success('面板设置已成功更新，工作队列已重新启动以应用这些更改。')->flash();
 
         return redirect()->route('admin.settings');
     }

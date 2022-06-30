@@ -214,9 +214,9 @@ class Permission extends Model
         ],
 
         'activity' => [
-            'description' => 'Permissions that control a user\'s access to the server activity logs.',
+            'description' => '控制用户对服务器活动日志的访问的权限。',
             'keys' => [
-                'read' => 'Allows a user to view the activity logs for the server.',
+                'read' => '允许用户查看服务器的活动日志。',
             ],
         ],
     ];

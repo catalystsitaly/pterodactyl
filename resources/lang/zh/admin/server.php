@@ -19,9 +19,9 @@ return [
     'alerts' => [
         'startup_changed' => '该服务器的启动配置已经更新。如果此服务器的预设组或预设被更改，现在将进行重新安装。',
         'server_deleted' => '服务器已成功从系统中删除。',
-        'server_created' => '服务器已在面板上成功创建。请允许守护进程用几分钟的时间来完全安装此服务器。',
+        'server_created' => '服务器已在面板上成功创建。请允许守护进程用几分钟的时间来完成安装此服务器。',
         'build_updated' => '此服务器的构建设置已更新。某些更改可能需要重新启动才能生效。',
-        'suspension_toggled' => '服务器冻结状态已更改为 :status。',
+        'suspension_toggled' => '服务器已从冻结状态更改为 :status。',
         'rebuild_on_boot' => '该服务器已标记为需要 Docker 容器重建。这将在下次启动服务器时执行该操作。',
         'install_toggled' => '该服务器的安装状态已被切换。',
         'server_reinstalled' => '此服务器已进入等候队列，马上重新安装。',
