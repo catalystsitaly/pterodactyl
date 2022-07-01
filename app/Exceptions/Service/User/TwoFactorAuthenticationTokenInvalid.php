@@ -11,6 +11,6 @@ class TwoFactorAuthenticationTokenInvalid extends DisplayException
      */
     public function __construct()
     {
-        parent::__construct('提供的双重验证令牌无效。');
+        parent::__construct('提供的双因素认证令牌无效。');
     }
 }

@@ -32,7 +32,7 @@
                                 </div>
                             </div>
                             <div class="form-group col-md-4">
-                                <label class="control-label">要求双重验证登录</label>
+                                <label class="control-label">要求双因素认证登录</label>
                                 <div>
                                     <div class="btn-group" data-toggle="buttons">
                                         @php
