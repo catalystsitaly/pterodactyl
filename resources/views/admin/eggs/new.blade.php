@@ -44,7 +44,7 @@
                             <div class="form-group">
                                 <label for="pName" class="form-label">预设名</label>
                                 <input type="text" id="pName" name="name" value="{{ old('name') }}" class="form-control" />
-                                <p class="text-muted small">一个简单的、易读的，用作此预设的标识符。 这是用户将看到的游戏服务器类型.</p>
+                                <p class="text-muted small">一个简单的、易读的，用作此预设的标识符。这是用户将看到的游戏服务器类型.</p>
                             </div>
                             <div class="form-group">
                                 <label for="pDescription" class="form-label">描述</label>
@@ -56,12 +56,12 @@
                             <div class="form-group">
                                 <label for="pDockerImage" class="control-label">Docker 镜像</label>
                                 <textarea id="pDockerImages" name="docker_images" rows="4" placeholder="quay.io/pterodactyl/service" class="form-control">{{ old('docker_images') }}</textarea>
-                                <p class="text-muted small">使用这个预设的服务器可用的 Docker 镜像。 每行输入一个。 如果提供了多个值，用户将能够从此图像列表中自行选择。</p>
+                                <p class="text-muted small">使用这个预设的服务器可用的 Docker 镜像。每行输入一个。如果提供了多个值，用户将能够从此图像列表中自行选择。</p>
                             </div>
                             <div class="form-group">
                                 <label for="pStartup" class="control-label">启动命令</label>
                                 <textarea id="pStartup" name="startup" class="form-control" rows="10">{{ old('startup') }}</textarea>
-                                <p class="text-muted small">用于此预设创建的新服务器的默认启动命令。 您可以根据需要更改每个服务器。</p>
+                                <p class="text-muted small">用于此预设创建的新服务器的默认启动命令。您可以根据需要更改每个服务器。</p>
                             </div>
                         </div>
                     </div>
@@ -91,7 +91,7 @@
                             <div class="form-group">
                                 <label for="pConfigStop" class="form-label">关机命令</label>
                                 <input type="text" id="pConfigStop" name="config_stop" class="form-control" value="{{ old('config_stop') }}" />
-                                <p class="text-muted small">应该发送到服务器进程以正常停止它们的命令。 如果你需要输出 <code>SIGINT</code> 你应该填入 <code>^C</code> 于此。</p>
+                                <p class="text-muted small">应该发送到服务器进程以正常停止它们的命令。如果你需要输出 <code>SIGINT</code> 你应该填入 <code>^C</code> 于此。</p>
                             </div>
                             <div class="form-group">
                                 <label for="pConfigLogs" class="form-label">日志设置</label>

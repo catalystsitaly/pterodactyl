@@ -33,7 +33,7 @@ export default () => {
         <PageContentBlock title={'账户概况'}>
             {state?.twoFactorRedirect && (
                 <MessageBox title={'需要启用双因素认证'} type={'error'}>
-                    您的帐户必须启用双重身份验证才能继续使用。
+                    您的帐户必须启用双因素认证才能继续使用。
                 </MessageBox>
             )}
 

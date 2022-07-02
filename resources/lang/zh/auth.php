@@ -21,7 +21,7 @@ return [
         'checkpoint_failed' => '双因素认证令牌无效。',
     ],
 
-    'throttle' => '登录尝试次数过多。 请在 :seconds 秒后重试。',
+    'throttle' => '登录尝试次数过多。请在 :seconds 秒后重试。',
     'password_requirements' => '密码长度必须至少为 8 个字符，并且对于本站来说应该是独一无二的。',
     '2fa_must_be_enabled' => '管理员要求您的帐户必须启用双因素认证才能正常使用面板',
 ];

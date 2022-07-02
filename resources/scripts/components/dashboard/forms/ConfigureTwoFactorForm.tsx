@@ -20,8 +20,8 @@ export default () => {
                 ))}
             <p css={tw`text-sm`}>
                 {isEnabled
-                    ? '您的帐户当前启用了双重身份验证。'
-                    : '您目前没有在您的帐户上启用双重身份验证， 单击下面的按钮即可开始配置。'}
+                    ? '您的帐户当前启用了双因素认证。'
+                    : '您目前没有在您的帐户上启用双因素认证， 单击下面的按钮即可开始配置。'}
             </p>
             <div css={tw`mt-6`}>
                 <Button color={'red'} isSecondary onClick={() => setVisible(true)}>

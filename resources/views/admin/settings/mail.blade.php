@@ -26,7 +26,7 @@
                         <div class="row">
                             <div class="col-xs-12">
                                 <div class="alert alert-info no-margin-bottom">
-                                    此接口仅限于使用 SMTP 作为邮件驱动程序的实例。 请使用 <code>php artisan p:environment:mail</code> 指令更新你的邮件设置, 或更改 <code>MAIL_DRIVER=smtp</code> 于你的 .env 环境文件内.
+                                    此接口仅限于使用 SMTP 作为邮件驱动程序的实例。请使用 <code>php artisan p:environment:mail</code> 指令更新你的邮件设置, 或更改 <code>MAIL_DRIVER=smtp</code> 于你的 .env 环境文件内.
                                 </div>
                             </div>
                         </div>
@@ -74,7 +74,7 @@
                                     <label class="control-label">密码 <span class="field-optional"></span></label>
                                     <div>
                                         <input type="password" class="form-control" name="mail:password"/>
-                                        <p class="text-muted small">与 SMTP 用户名一起使用的密码。 留空以继续使用现有密码。 要将密码设置为空值，请输入 <code>!e</code> .</p>
+                                        <p class="text-muted small">与 SMTP 用户名一起使用的密码。留空以继续使用现有密码。要将密码设置为空值，请输入 <code>!e</code> .</p>
                                     </div>
                                 </div>
                             </div>

@@ -77,7 +77,7 @@
                         <h3 class="box-title">删除此节点服务器</h3>
                     </div>
                     <div class="box-body">
-                        <p class="no-margin">删除节点服务器是不可逆的操作，会立即从面板中删除该节点服务器。 必须没有与此节点服务器关联的服务器实例才能进行删除操作。</p>
+                        <p class="no-margin">删除节点服务器是不可逆的操作，会立即从面板中删除该节点服务器。必须没有与此节点服务器关联的服务器实例才能进行删除操作。</p>
                     </div>
                     <div class="box-footer">
                         <form action="{{ route('admin.nodes.view.delete', $node->id) }}" method="POST">

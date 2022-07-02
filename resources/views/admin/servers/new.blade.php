@@ -166,7 +166,7 @@
                             <input type="text" id="pThreads" name="threads" class="form-control" value="{{ old('threads') }}" />
                         </div>
 
-                        <p class="text-muted small"><strong>A高级:</strong> 输入此进程可以运行的特定 CPU 线程，或留空以允许所有线程。 这可以是单个数字，也可以是逗号分隔的列表. 例如: <code>0</code>, <code>0-1,3</code>, 或 <code>0,1,3,4</code>.</p>
+                        <p class="text-muted small"><strong>A高级:</strong> 输入此进程可以运行的特定 CPU 线程，或留空以允许所有线程。这可以是单个数字，也可以是逗号分隔的列表. 例如: <code>0</code>, <code>0-1,3</code>, 或 <code>0,1,3,4</code>.</p>
                     </div>
                 </div>
 
@@ -179,7 +179,7 @@
                             <span class="input-group-addon">MB</span>
                         </div>
 
-                        <p class="text-muted small">此容器允许的最大内存量。 将此设置为 <code>0</code> 将允许此服务器实例无限制使用内存.</p>
+                        <p class="text-muted small">此容器允许的最大内存量。将此设置为 <code>0</code> 将允许此服务器实例无限制使用内存.</p>
                     </div>
 
                     <div class="form-group col-xs-6">
@@ -203,7 +203,7 @@
                             <span class="input-group-addon">MB</span>
                         </div>
 
-                        <p class="text-muted small">如果此服务器使用的空间超过此数量，则将不允许它启动。 如果服务器在运行时超过此限制，它将安全停止并锁定，直到有足够的可用空间。 调成 <code>0</code> 将允许此服务器实例使用无限存储空间.</p>
+                        <p class="text-muted small">如果此服务器使用的空间超过此数量，则将不允许它启动。如果服务器在运行时超过此限制，它将安全停止并锁定，直到有足够的可用空间。调成 <code>0</code> 将允许此服务器实例使用无限存储空间.</p>
                     </div>
 
                     <div class="form-group col-xs-6">
@@ -221,7 +221,7 @@
                             <label for="pOomDisabled" class="strong">启用 OOM Killer</label>
                         </div>
 
-                        <p class="small text-muted no-margin">如果服务器超出内存限制，则终止服务器。 启用 OOM Killer 可能会导致服务器进程意外退出.</p>
+                        <p class="small text-muted no-margin">如果服务器超出内存限制，则终止服务器。启用 OOM Killer 可能会导致服务器进程意外退出.</p>
                     </div>
                 </div>
             </div>
@@ -263,7 +263,7 @@
                             <label for="pSkipScripting" class="strong">跳过预设安装程序</label>
                         </div>
 
-                        <p class="small text-muted no-margin">如果选定的预设附加了安装程序，则该程序将在安装期间运行。 如果您想跳过此步骤，请选中此框.</p>
+                        <p class="small text-muted no-margin">如果选定的预设附加了安装程序，则该程序将在安装期间运行。如果您想跳过此步骤，请选中此框.</p>
                     </div>
                 </div>
             </div>
@@ -280,7 +280,7 @@
                         <label for="pDefaultContainer">Docker 镜像</label>
                         <select id="pDefaultContainer" name="image" class="form-control"></select>
                         <input id="pDefaultContainerCustom" name="custom_image" value="{{ old('custom_image') }}" class="form-control" placeholder="或输入自定义镜像..." style="margin-top:1rem"/>
-                        <p class="small text-muted no-margin">这是将用于运行此服务器的默认 Docker 映像。 从上面的下拉列表中选择一个镜像，或在上面的文本字段中输入一个自定义镜像.</p>
+                        <p class="small text-muted no-margin">这是将用于运行此服务器的默认 Docker 映像。从上面的下拉列表中选择一个镜像，或在上面的文本字段中输入一个自定义镜像.</p>
                     </div>
                 </div>
             </div>

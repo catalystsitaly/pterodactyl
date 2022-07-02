@@ -137,7 +137,7 @@ const TaskDetailsModal = ({ schedule, task }: Props) => {
                                 name={'timeOffset'}
                                 label={'时间偏移（以秒为单位）'}
                                 description={
-                                    '上一个任务执行后在运行此任务之前等待的时间。 如果这是计划中的第一个任务，则不会应用该任务。'
+                                    '上一个任务执行后在运行此任务之前等待的时间。如果这是计划中的第一个任务，则不会应用该任务。'
                                 }
                             />
                         </div>
@@ -168,7 +168,7 @@ const TaskDetailsModal = ({ schedule, task }: Props) => {
                                 <FormikFieldWrapper
                                     name={'payload'}
                                     description={
-                                        '可选的。 包括要在此备份中排除的文件和文件夹。 默认情况下，将使用 .pteroignore 文件的内容。 如果您已达到备份限制，则将轮换最早的备份。'
+                                        '可选的。包括要在此备份中排除的文件和文件夹。默认情况下，将使用 .pteroignore 文件的内容。如果您已达到备份限制，则将轮换最早的备份。'
                                     }
                                 >
                                     <FormikField as={Textarea} name={'payload'} rows={6} />

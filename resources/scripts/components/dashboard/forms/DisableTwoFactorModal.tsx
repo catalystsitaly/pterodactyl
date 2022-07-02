@@ -55,13 +55,13 @@ const DisableTwoFactorModal = () => {
                         type={'password'}
                         label={'当前密码'}
                         description={
-                            '为了禁用双重身份验证，您需要提供您的帐户密码。'
+                            '为了禁用双因素认证，您需要提供您的帐户密码。'
                         }
                         autoFocus
                     />
                     <div css={tw`mt-6 text-right`}>
                         <Button color={'red'} disabled={!isValid}>
-                            关闭双重身份验证
+                            关闭双因素认证
                         </Button>
                     </div>
                 </Form>

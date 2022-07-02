@@ -43,7 +43,7 @@
                         <div>
                             <input type="text" name="threads" class="form-control" value="{{ old('threads', $server->threads) }}"/>
                         </div>
-                        <p class="text-muted small"><strong>高级:</strong> 输入此进程可以在其上运行的特定 CPU 内核，或留空以允许所有内核。 这可以是单个数字，也可以是逗号分隔的列表. 例如: <code>0</code>, <code>0-1,3</code>, 或者 <code>0,1,3,4</code>.</p>
+                        <p class="text-muted small"><strong>高级:</strong> 输入此进程可以在其上运行的特定 CPU 内核，或留空以允许所有内核。这可以是单个数字，也可以是逗号分隔的列表. 例如: <code>0</code>, <code>0-1,3</code>, 或者 <code>0,1,3,4</code>.</p>
                     </div>
                     <div class="form-group">
                         <label for="memory" class="control-label">分配内存</label>
@@ -51,7 +51,7 @@
                             <input type="text" name="memory" data-multiplicator="true" class="form-control" value="{{ old('memory', $server->memory) }}"/>
                             <span class="input-group-addon">MB</span>
                         </div>
-                        <p class="text-muted small">此服务器实例允许的最大内存使用量。 将此设置为 <code>0</code> 将不限制此服务器实例内存使用。</p>
+                        <p class="text-muted small">此服务器实例允许的最大内存使用量。将此设置为 <code>0</code> 将不限制此服务器实例内存使用。</p>
                     </div>
                     <div class="form-group">
                         <label for="swap" class="control-label">分配交换内存</label>
@@ -67,7 +67,7 @@
                             <input type="text" name="disk" class="form-control" value="{{ old('disk', $server->disk) }}"/>
                             <span class="input-group-addon">MB</span>
                         </div>
-                        <p class="text-muted small">如果此服务器实例使用的空间超过此数量，则将不允许它启动。 如果服务器实例在运行时超过此限制，它将安全停止并锁定，直到有足够的可用空间。 调成 <code>0</code> 允许此服务器实例无限制使用存储空间.</p>
+                        <p class="text-muted small">如果此服务器实例使用的空间超过此数量，则将不允许它启动。如果服务器实例在运行时超过此限制，它将安全停止并锁定，直到有足够的可用空间。调成 <code>0</code> 允许此服务器实例无限制使用存储空间.</p>
                     </div>
                     <div class="form-group">
                         <label for="io" class="control-label">IO 优先级</label>
@@ -168,7 +168,7 @@
                                         @endforeach
                                     </select>
                                 </div>
-                                <p class="text-muted small">只需从上面的列表中选择您要删除的端口。 如果您想在已使用的不同 IP 上分配一个端口，您可以从左侧选择它并在此处将其删除.</p>
+                                <p class="text-muted small">只需从上面的列表中选择您要删除的端口。如果您想在已使用的不同 IP 上分配一个端口，您可以从左侧选择它并在此处将其删除.</p>
                             </div>
                         </div>
                         <div class="box-footer">

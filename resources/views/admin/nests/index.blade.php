@@ -22,7 +22,7 @@
 <div class="row">
     <div class="col-xs-12">
         <div class="alert alert-danger">
-            预设是翼龙面板的一个强大功能，可实现极大的灵活性和配置。 请注意，虽然功能强大，但错误地修改预设很容易使您的服务器宕机并导致更多问题。 请避免编辑我们的默认预设 — 由 <code>support@pterodactyl.io</code> 提供 — 除非阁下十分明白该如何修改预设.
+            预设是翼龙面板的一个强大功能，可实现极大的灵活性和配置。请注意，虽然功能强大，但错误地修改预设很容易使您的服务器宕机并导致更多问题。请避免编辑我们的默认预设 — 由 <code>support@pterodactyl.io</code> 提供 — 除非阁下十分明白该如何修改预设.
         </div>
     </div>
 </div>
@@ -83,7 +83,7 @@
                                    <option value="{{ $nest->id }}">{{ $nest->name }} &lt;{{ $nest->author }}&gt;</option>
                                 @endforeach
                             </select>
-                            <p class="small text-muted">从下拉列表中选择与此预设关联的预设组。 如果您希望将其与新预设组相关联，则需要在继续之前创建该预设组.</p>
+                            <p class="small text-muted">从下拉列表中选择与此预设关联的预设组。如果您希望将其与新预设组相关联，则需要在继续之前创建该预设组.</p>
                         </div>
                     </div>
                 </div>

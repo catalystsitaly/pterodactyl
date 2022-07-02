@@ -75,7 +75,7 @@
                     <div class="form-group">
                         <label for="pName" class="form-label">名称</label>
                         <input type="text" name="name" id="pName" class="form-control" />
-                        <p class="text-muted small">用于将此主机与其他主机区分开来的简短标识符。 必须介于 1 到 60 个字符之间，例如, <code>us.nyc.lvl3</code>.</p>
+                        <p class="text-muted small">用于将此主机与其他主机区分开来的简短标识符。必须介于 1 到 60 个字符之间，例如, <code>us.nyc.lvl3</code>.</p>
                     </div>
                     <div class="row">
                         <div class="col-md-6">

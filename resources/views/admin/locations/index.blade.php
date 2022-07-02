@@ -65,7 +65,7 @@
                         <div class="col-md-12">
                             <label for="pShortModal" class="form-label">标识码</label>
                             <input type="text" name="short" id="pShortModal" class="form-control" />
-                            <p class="text-muted small">用于将此地域与其他节点服务器区分开来的简短标识符。 必须介于 1 到 60 个字符之间, 例如, <code>us.nyc.lvl3</code>.</p>
+                            <p class="text-muted small">用于将此地域与其他节点服务器区分开来的简短标识符。必须介于 1 到 60 个字符之间, 例如, <code>us.nyc.lvl3</code>.</p>
                         </div>
                         <div class="col-md-12">
                             <label for="pLongModal" class="form-label">描述</label>

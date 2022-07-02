@@ -14,7 +14,7 @@ return [
         'deleted' => '已成功将该用户从面板中删除。',
         'confirm_delete' => '您确定要从面板中删除此用户吗？',
         'no_users_found' => '提供的搜索词未能找到相符的用户。',
-        'multiple_found' => '提供的搜索词找到多个帐户，由于 --no-interaction 标志而无法删除用户。',
+        'multiple_found' => '提供的搜索词找到多个帐户，由于 --no-interaction 标签而无法删除用户。',
         'ask_admin' => '此用户是否为管理员？',
         'ask_email' => '邮箱地址',
         'ask_username' => '用户名',
@@ -39,10 +39,10 @@ return [
         'rebuild_failed' => '在节点 ":node" 上对 ":name" (#:id) 的重建请求失败并出现错误：:message',
         'reinstall' => [
             'failed' => '在节点 ":node" 上重新安装 ":name" (#:id) 请求失败并出现错误: :message',
-            'confirm' => '您即将针对一组服务器重新安装。 你想继续吗？',
+            'confirm' => '您即将针对一组服务器重新安装。你想继续吗？',
         ],
         'power' => [
-            'confirm' => '您即将对 :count 服务器执行 :action。 你想继续吗？',
+            'confirm' => '您即将对 :count 服务器执行 :action。你想继续吗？',
             'action_failed' => '节点 ":node" 上 ":name" (#:id) 的电源操作请求失败并出现错误: :message',
         ],
     ],

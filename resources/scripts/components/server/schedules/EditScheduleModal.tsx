@@ -105,7 +105,7 @@ const EditScheduleModal = ({ schedule }: Props) => {
                         <Field name={'dayOfWeek'} label={'每周的某一天'} />
                     </div>
                     <p css={tw`text-neutral-400 text-xs mt-2`}>
-                        计划系统支持在定义任务何时开始运行时使用 Cronjob 语法。 使用上面的字段来指定这些计划任务应该何时开始运行。
+                        计划系统支持在定义任务何时开始运行时使用 Cronjob 语法。使用上面的字段来指定这些计划任务应该何时开始运行。
                     </p>
                     <div css={tw`mt-6 bg-neutral-700 border border-neutral-800 shadow-inner p-4 rounded`}>
                         <Switch

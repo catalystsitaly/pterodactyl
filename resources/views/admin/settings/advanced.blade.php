@@ -52,7 +52,7 @@
                             <div class="row">
                                 <div class="col-xs-12">
                                     <div class="alert alert-warning no-margin">
-                                        您当前正在使用随此面板提供的 reCAPTCHA 密钥。 为了提高安全性，建议专门为此网站 <a href="https://www.google.com/recaptcha/admin">生成新的 reCAPTCHA 密钥</a>.
+                                        您当前正在使用随此面板提供的 reCAPTCHA 密钥。为了提高安全性，建议专门为此网站 <a href="https://www.google.com/recaptcha/admin">生成新的 reCAPTCHA 密钥</a>.
                                     </div>
                                 </div>
                             </div>

@@ -87,12 +87,12 @@
                     <div class="form-group">
                         <label for="pRemote" class="control-label">连接白名单</label>
                         <input id="pRemote" type="text" name="remote" class="form-control" value="%" />
-                        <p class="text-muted small">这应该反映允许连接的 IP 地址。 使用标准 MySQL 表示法。 如果不确定请填写 <code>%</code>。</p>
+                        <p class="text-muted small">这应该反映允许连接的 IP 地址。使用标准 MySQL 表示法。如果不确定请填写 <code>%</code>。</p>
                     </div>
                     <div class="form-group">
                         <label for="pmax_connections" class="control-label">最大连接数</label>
                         <input id="pmax_connections" type="text" name="max_connections" class="form-control"/>
-                        <p class="text-muted small">这应该反映从该用户到数据库的最大并发连接数。 留空表示无限制。</p>
+                        <p class="text-muted small">这应该反映从该用户到数据库的最大并发连接数。留空表示无限制。</p>
                     </div>
                 </div>
                 <div class="box-footer">

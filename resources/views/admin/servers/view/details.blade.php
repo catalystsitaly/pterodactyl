@@ -38,14 +38,14 @@
                     <div class="form-group">
                         <label for="external_id" class="control-label">外部 ID</label>
                         <input type="text" name="external_id" value="{{ old('external_id', $server->external_id) }}" class="form-control" />
-                        <p class="text-muted small">留空以不为此服务器分配外部标识符。 外部 ID 对于此服务器应该是唯一的，并且未被任何其他服务器使用。</p>
+                        <p class="text-muted small">留空以不为此服务器分配外部标识符。外部 ID 对于此服务器应该是唯一的，并且未被任何其他服务器使用。</p>
                     </div>
                     <div class="form-group">
                         <label for="pUserId" class="control-label">服务器所有者 <span class="field-required"></span></label>
                         <select name="owner_id" class="form-control" id="pUserId">
                             <option value="{{ $server->owner_id }}" selected>{{ $server->user->email }}</option>
                         </select>
-                        <p class="text-muted small">您可以通过将此字段更改为与此系统上的其他用途匹配的电子邮件来更改此服务器的所有者。 如果您这样做，将自动生成一个新的守护程序安全令牌。</p>
+                        <p class="text-muted small">您可以通过将此字段更改为与此系统上的其他用途匹配的电子邮件来更改此服务器的所有者。如果您这样做，将自动生成一个新的守护程序安全令牌。</p>
                     </div>
                     <div class="form-group">
                         <label for="description" class="control-label">服务器描述</label>

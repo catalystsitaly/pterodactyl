@@ -82,7 +82,7 @@ const PIDLimitModalFeature = () => {
                         <h2 css={tw`text-2xl mb-4 text-neutral-100`}>可能达到资源限制...</h2>
                     </div>
                     <p css={tw`mt-4`}>
-                        此服务器尝试使用的资源多于分配的资源。 请联系管理员，并在下面给他们错误信息。
+                        此服务器尝试使用的资源多于分配的资源。请联系管理员，并在下面给他们错误信息。
                     </p>
                     <p css={tw`mt-4`}>
                         <code css={tw`font-mono bg-neutral-900`}>

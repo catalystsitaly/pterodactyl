@@ -51,7 +51,7 @@
                             <label class="control-label" for="memoField">描述 <span class="field-required"></span></label>
                             <input id="memoField" type="text" name="memo" class="form-control">
                         </div>
-                        <p class="text-muted">一旦您分配了权限并创建了这组凭据，您将无法返回并对其进行编辑。 如果您需要在以后进行更改，则需要创建一组新的凭据.</p>
+                        <p class="text-muted">一旦您分配了权限并创建了这组凭据，您将无法返回并对其进行编辑。如果您需要在以后进行更改，则需要创建一组新的凭据.</p>
                     </div>
                     <div class="box-footer">
                         {{ csrf_field() }}

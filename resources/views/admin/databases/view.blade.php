@@ -73,7 +73,7 @@
                     <div class="form-group">
                         <label for="pPassword" class="form-label">密码</label>
                         <input type="password" name="password" id="pPassword" class="form-control" />
-                        <p class="text-muted small">已定义帐户的密码。 留空以继续使用分配的密码.</p>
+                        <p class="text-muted small">已定义帐户的密码。留空以继续使用分配的密码.</p>
                     </div>
                     <hr />
                     <p class="text-danger small text-left">连接此数据库主机所使用的账户 <strong>必须</strong> 具有 <code>WITH GRANT OPTION</code> 权限. 如果账户没有此权限将 <em>无法</em> 成功建立数据库. <strong>不要为 MySQL 使用您为此面板使用的相同帐户详细信息.</strong></p>

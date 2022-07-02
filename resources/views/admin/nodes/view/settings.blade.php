@@ -77,7 +77,7 @@
                             <input type="text" autocomplete="off" name="fqdn" class="form-control" value="{{ old('fqdn', $node->fqdn) }}" />
                         </div>
                         <p class="text-muted"><small>请输入节点服务器域名 (例如 <code>node.example.com</code>) 用来连接至守护进程. 仅当您没有为此节点使用 SSL 时才可以使用 IP 地址.
-                                <a tabindex="0" data-toggle="popover" data-trigger="focus" title="为什么需要(FQDN)域名？" data-content="为了保护您的服务器与此节点之间的通信，我们使用 SSL。 我们无法为 IP 地址生成 SSL 证书，因此您需要提供(FQDN)域名。">为什么？</a>
+                                <a tabindex="0" data-toggle="popover" data-trigger="focus" title="为什么需要(FQDN)域名？" data-content="为了保护您的服务器与此节点之间的通信，我们使用 SSL。我们无法为 IP 地址生成 SSL 证书，因此您需要提供(FQDN)域名。">为什么？</a>
                             </small></p>
                     </div>
                     <div class="form-group col-xs-12">
@@ -92,7 +92,7 @@
                                 <label for="pSSLFalse"> 使用 HTTP 通信 (无 SSL)</label>
                             </div>
                         </div>
-                        <p class="text-muted small">在大多数情况下，您应该选择使用 SSL 连接。 如果使用 IP 地址或者您根本不想使用 SSL，请选择 HTTP 连接.</p>
+                        <p class="text-muted small">在大多数情况下，您应该选择使用 SSL 连接。如果使用 IP 地址或者您根本不想使用 SSL，请选择 HTTP 连接.</p>
                     </div>
                     <div class="form-group col-xs-12">
                         <label class="form-label"><span class="label label-warning"><i class="fa fa-power-off"></i></span> 通过代理</label>
@@ -148,7 +148,7 @@
                                 </div>
                             </div>
                         </div>
-                        <p class="text-muted small">输入此节点上可用于分配给服务器的内存总量。 您还可以提供一个百分比，允许分配超过定义的内存.</p>
+                        <p class="text-muted small">输入此节点上可用于分配给服务器的内存总量。您还可以提供一个百分比，允许分配超过定义的内存.</p>
                     </div>
                     <div class="col-xs-12">
                         <div class="row">
@@ -167,7 +167,7 @@
                                 </div>
                             </div>
                         </div>
-                        <p class="text-muted small">输入此节点上可用于服务器分配的磁盘空间总量。 您还可以提供一个百分比来确定超出设置限制的磁盘空间量以允许.</p>
+                        <p class="text-muted small">输入此节点上可用于服务器分配的磁盘空间总量。您还可以提供一个百分比来确定超出设置限制的磁盘空间量以允许.</p>
                     </div>
                 </div>
             </div>
@@ -220,7 +220,7 @@
                         <div>
                             <input type="checkbox" name="reset_secret" id="reset_secret" /> <label for="reset_secret" class="control-label">重置守护进程超级密钥</label>
                         </div>
-                        <p class="text-muted"><small>重置守护程序超级密钥将使来自旧密钥的任何请求无效。 此密钥用于守护程序上的所有敏感操作，包括服务器创建和删除。 我们建议定期更改此密钥以确保安全.</small></p>
+                        <p class="text-muted"><small>重置守护程序超级密钥将使来自旧密钥的任何请求无效。此密钥用于守护程序上的所有敏感操作，包括服务器创建和删除。我们建议定期更改此密钥以确保安全.</small></p>
                     </div>
                 </div>
                 <div class="box-footer">

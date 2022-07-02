@@ -54,11 +54,11 @@
                 <div class="box-body row">
                     <div class="col-xs-12">
                         <p class="small text-danger">
-                            更改以下任何值将导致服务器处理重新安装命令。 服务器将停止运行，然后重启。
+                            更改以下任何值将导致服务器处理重新安装命令。服务器将停止运行，然后重启。
                             如果您不希望服务程序运行，请确保选中底部的框。
                         </p>
                         <p class="small text-danger">
-                            <strong>在许多情况下，这是一种破坏性操作。 此服务器将立即停止，以便此操作继续进行.</strong>
+                            <strong>在许多情况下，这是一种破坏性操作。此服务器将立即停止，以便此操作继续进行.</strong>
                         </p>
                     </div>
                     <div class="form-group col-xs-12">
@@ -84,7 +84,7 @@
                             <input id="pSkipScripting" name="skip_scripts" type="checkbox" value="1" @if($server->skip_scripts) checked @endif />
                             <label for="pSkipScripting" class="strong">跳过预设安装程序</label>
                         </div>
-                        <p class="small text-muted no-margin">如果选定的预设附加了安装程序，则该程序将在安装期间运行。 如果您想跳过此步骤，请选中此框.</p>
+                        <p class="small text-muted no-margin">如果选定的预设附加了安装程序，则该程序将在安装期间运行。如果您想跳过此步骤，请选中此框.</p>
                     </div>
                 </div>
             </div>
@@ -97,7 +97,7 @@
                         <label for="pDockerImage">镜像</label>
                         <select id="pDockerImage" name="docker_image" class="form-control"></select>
                         <input id="pDockerImageCustom" name="custom_docker_image" value="{{ old('custom_docker_image') }}" class="form-control" placeholder="Or enter a custom image..." style="margin-top:1rem"/>
-                        <p class="small text-muted no-margin">这是将用于运行此服务器的 Docker 映像。 从下拉列表中选择镜像或在上面的文本字段中输入自定义镜像.</p>
+                        <p class="small text-muted no-margin">这是将用于运行此服务器的 Docker 映像。从下拉列表中选择镜像或在上面的文本字段中输入自定义镜像.</p>
                     </div>
                 </div>
             </div>

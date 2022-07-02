@@ -82,7 +82,7 @@
                         <label for="password" class="control-label">密码 <span class="field-optional"></span></label>
                         <div>
                             <input type="password" id="password" name="password" class="form-control form-autocomplete-stop">
-                            <p class="text-muted small">留空以保持此用户的密码相同。 如果更改密码，用户将不会收到任何通知.</p>
+                            <p class="text-muted small">留空以保持此用户的密码相同。如果更改密码，用户将不会收到任何通知.</p>
                         </div>
                     </div>
                 </div>

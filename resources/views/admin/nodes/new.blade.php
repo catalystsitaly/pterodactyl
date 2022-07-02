@@ -78,9 +78,9 @@
                             </div>
                         </div>
                         @if(request()->isSecure())
-                            <p class="text-danger small">您的面板当前配置为使用 SSL 安全连接。 为了让浏览器连接到您的节点，其 <strong>必须</strong> 使用 SSL 连接.</p>
+                            <p class="text-danger small">您的面板当前配置为使用 SSL 安全连接。为了让浏览器连接到您的节点，其 <strong>必须</strong> 使用 SSL 连接.</p>
                         @else
-                            <p class="text-muted small">在大多数情况下，您应该选择使用 SSL 连接。 如果使用 IP 地址或者您根本不想使用 SSL，请选择 HTTP 连接。( 不安全 )</p>
+                            <p class="text-muted small">在大多数情况下，您应该选择使用 SSL 连接。如果使用 IP 地址或者您根本不想使用 SSL，请选择 HTTP 连接。( 不安全 )</p>
                         @endif
                     </div>
                     <div class="form-group">
@@ -110,7 +110,7 @@
                         <div class="form-group col-md-6">
                             <label for="pDaemonBase" class="form-label">守护程序服务器文件目录</label>
                             <input type="text" name="daemonBase" id="pDaemonBase" class="form-control" value="/var/lib/pterodactyl/volumes" />
-                            <p class="text-muted small">输入存储服务器使用的文件目录. <strong>如果您使用 OVH，您应该检查您的分区方案。 你可能需要让 <code>/home/daemon-data</code> 有足够的空间.</strong></p>
+                            <p class="text-muted small">输入存储服务器使用的文件目录. <strong>如果您使用 OVH，您应该检查您的分区方案。你可能需要让 <code>/home/daemon-data</code> 有足够的空间.</strong></p>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="pMemory" class="form-label">总运行内存容量</label>
@@ -127,7 +127,7 @@
                             </div>
                         </div>
                         <div class="col-md-12">
-                            <p class="text-muted small">输入可用于新服务器的内存总量。 如果您希望允许过度分配内存，请输入您希望允许的百分比。 要禁用检查过度分配，请输入 <code>-1</code> 于此处. 输入 <code>0</code> 的话，如果服务器实例内存总量超过节点服务器最大内存总量，将阻止创建新服务器.</p>
+                            <p class="text-muted small">输入可用于新服务器的内存总量。如果您希望允许过度分配内存，请输入您希望允许的百分比。要禁用检查过度分配，请输入 <code>-1</code> 于此处. 输入 <code>0</code> 的话，如果服务器实例内存总量超过节点服务器最大内存总量，将阻止创建新服务器.</p>
                         </div>
                     </div>
                     <div class="row">
@@ -146,7 +146,7 @@
                             </div>
                         </div>
                         <div class="col-md-12">
-                            <p class="text-muted small">输入可用于新服务器的磁盘空间总量。 如果您希望允许过度分配磁盘空间，请输入您希望允许的百分比。 要禁用检查过度分配，请输入 <code>-1</code> 于此处. 输入 <code>0</code> 的话，如果服务器实例存储空间总用量超过节点服务器最大存储空间总量，将阻止创建新服务器.</p>
+                            <p class="text-muted small">输入可用于新服务器的磁盘空间总量。如果您希望允许过度分配磁盘空间，请输入您希望允许的百分比。要禁用检查过度分配，请输入 <code>-1</code> 于此处. 输入 <code>0</code> 的话，如果服务器实例存储空间总用量超过节点服务器最大存储空间总量，将阻止创建新服务器.</p>
                         </div>
                     </div>
                     <div class="row">
@@ -159,7 +159,7 @@
                             <input type="text" name="daemonSFTP" class="form-control" id="pDaemonSFTP" value="2022" />
                         </div>
                         <div class="col-md-12">
-                            <p class="text-muted small">守护进程运行自己的 SFTP 管理容器，并且不使用主物理服务器上的 SSHd 进程。 <Strong>不要使用为物理服务器的 SSH 进程分配的相同端口。</strong> 如果您将在 CloudFlare 后面运行守护程序&reg; 您应该将守护程序端口设置为 <code>8443</code> 允许通过 SSL 进行 websocket 代理.</p>
+                            <p class="text-muted small">守护进程运行自己的 SFTP 管理容器，并且不使用主物理服务器上的 SSHd 进程。<Strong>不要使用为物理服务器的 SSH 进程分配的相同端口。</strong> 如果您将在 CloudFlare 后面运行守护程序&reg; 您应该将守护程序端口设置为 <code>8443</code> 允许通过 SSL 进行 websocket 代理.</p>
                         </div>
                     </div>
                 </div>
