@@ -38,7 +38,7 @@ const PageContentBlock: React.FC<PageContentBlockProps> = ({ title, showFlashKey
                         &nbsp;Software which Sinicizated by&nbsp;
                         <a
                             rel={'noopener nofollow noreferrer'}
-                            href={'https://github.com/Pterodactyl-China'}
+                            href={'https://github.com/pterodactyl-china'}
                             target={'_blank'}
                             css={tw`no-underline text-neutral-500 hover:text-neutral-300`}
                         >
