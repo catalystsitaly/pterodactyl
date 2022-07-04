@@ -26,7 +26,7 @@ const CopyOnClick = ({ text, showInNotification = true, children }: CopyOnClickP
     }, [copied]);
 
     if (!React.isValidElement(children)) {
-        throw new Error('传递给 <CopyOnClick/> 的组件必须是有效的 React 元素。');
+        throw new Error('传递给 <CopyOnClick/> 的必须是有效的 React 元素。');
     }
 
     const child = !text
