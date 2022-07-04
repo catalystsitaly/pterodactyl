@@ -20,7 +20,7 @@ class ProcessRunnableCommand extends Command
     /**
      * @var string
      */
-    protected $description = '处理数据库中的计划并确定哪些可以运行。';
+    protected $description = 'Process schedules in the database and determine which are ready to run.';
 
     /**
      * Handle command execution.
@@ -75,7 +75,7 @@ class ProcessRunnableCommand extends Command
         } catch (Throwable|Exception $exception) {
             Log::error($exception, ['schedule_id' => $schedule->id]);
 
-            $this->error("处理计划 #{$schedule->id} 时遇到错误：" . $exception->getMessage());
+            $this->error("An error was encountered while processing Schedule #{$schedule->id}: " . $exception->getMessage());
         }
     }
 }
