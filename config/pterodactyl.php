@@ -123,7 +123,7 @@ return [
     */
     'cdn' => [
         'cache_time' => 60,
-        'url' => 'https://raw.githubusercontent.com/pterodactyl-china/documentation/master/.vuepress/public/releases/latest.json',
+        'url' => 'https://cdn.pterodactyl.io/releases/latest.json',
     ],
 
     /*
