@@ -4,6 +4,20 @@ This file is a running track of new features and fixes to each version of the pa
 This project follows [Semantic Versioning](http://semver.org) guidelines.
 
 ## v1.9.2
+### 修复
+* 修复了图表侧边栏里的 CPU 使用率中渲染过多的零导致的问题。
+* 修复了 Java 版本选择器模式，最初选择了错误的默认值。
+* 修复了 Safari 中的控制台渲染导致控制台过度调整大小和图形覆盖内容。
+* 修复服务器正常运行时间块中缺少 "正在启动" / "停止中" 的状态显示。
+* 修复查看某些文件操作时活动日志格式不正确的问题。
+
+### 调整
+* 更新了帐户双因素认证授权设置的 UI，以使用新的对话框 UI，并为新用户提供更好更容易理解。
+
+### 新增
+* 在模板输出中添加了缺少的 `<DOCTYPE html>` 标签，以避免在浏览器中进入怪异模式。
+* 在账户上启用 TOTP 时添加密码要求。
+----
 ### Fixed
 * Fixes rouding in sidebar of CPU usage graph that was causing an excessive number of zeros to be rendered.
 * Fixes the Java Version selector modal having the wrong default value selected initially.
