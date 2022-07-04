@@ -17,7 +17,7 @@ class DisableTwoFactorCommand extends Command
     /**
      * @var string
      */
-    protected $description = 'Disable two-factor authentication for a specific user in the Panel.';
+    protected $description = '禁用面板中特定用户的双因素认证。';
 
     /**
      * @var \Pterodactyl\Contracts\Repository\UserRepositoryInterface
@@ -27,7 +27,7 @@ class DisableTwoFactorCommand extends Command
     /**
      * @var string
      */
-    protected $signature = 'p:user:disable2fa {--email= : The email of the user to disable 2-Factor for.}';
+    protected $signature = 'p:user:disable2fa {--email= : 用于禁用双因素认证的用户邮箱。}';
 
     /**
      * DisableTwoFactorCommand constructor.

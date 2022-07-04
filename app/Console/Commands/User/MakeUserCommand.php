@@ -22,7 +22,7 @@ class MakeUserCommand extends Command
     /**
      * @var string
      */
-    protected $description = 'Creates a user on the system via the CLI.';
+    protected $description = '通过 CLI 在系统中创建一个用户。';
 
     /**
      * @var string
