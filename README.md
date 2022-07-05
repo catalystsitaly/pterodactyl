@@ -19,8 +19,8 @@ Pterodactyl® 是一个免费的开源游戏服务器管理面板，使用 PHP�
 ## 文档
 * [Panel 前端中文文档](https://pterodactyl.top/panel/1.0/getting_started.html)
 * [Wings 后端中文文档](https://pterodactyl.top/wings/1.0/installing.html)
-* [社区支援文档](https://pterodactyl.top/community/about.html)
-* 或者，[翼龙中国社区](https://bbs.pterodactyl.top) 获得更多帮助
+* [社区指南文档](https://pterodactyl.top/community/about.html)
+* 或者，[通过翼龙中国社区](https://bbs.pterodactyl.top) 获得更多帮助
 
 <!--
 ## 赞助商
