@@ -32,7 +32,7 @@
                                 </div>
                             </div>
                             <div class="form-group col-md-4">
-                                <label class="control-label">要求双因素认证登录</label>
+                                <label class="control-label">要求动态口令认证登录</label>
                                 <div>
                                     <div class="btn-group" data-toggle="buttons">
                                         @php
@@ -48,7 +48,7 @@
                                             <input type="radio" name="pterodactyl:auth:2fa_required" autocomplete="off" value="2" @if ($level == 2) checked @endif> 所有用户
                                         </label>
                                     </div>
-                                    <p class="text-muted"><small>如果启用，任何属于所选分组的帐户都需要启用双因素认证才能使用面板.</small></p>
+                                    <p class="text-muted"><small>如果启用，任何属于所选分组的帐户都需要启用动态口令认证才能使用面板.</small></p>
                                 </div>
                             </div>
                             <div class="form-group col-md-4">

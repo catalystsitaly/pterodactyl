@@ -67,6 +67,6 @@ const DisableTOTPDialog = () => {
 };
 
 export default asDialog({
-    title: '禁用双因素认证',
-    description: '禁用双因素认证将会使您的帐户安全性降低。',
+    title: '禁用动态口令认证',
+    description: '禁用动态口令认证将会使您的帐户安全性降低。',
 })(DisableTOTPDialog);

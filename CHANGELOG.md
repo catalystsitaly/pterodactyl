@@ -12,7 +12,7 @@ This project follows [Semantic Versioning](http://semver.org) guidelines.
 * 修复查看某些文件操作时活动日志格式不正确的问题。
 
 ### 调整
-* 更新了帐户双因素认证授权设置的 UI，以使用新的对话框 UI，并为新用户提供更好更容易理解。
+* 更新了帐户动态口令认证授权设置的 UI，以使用新的对话框 UI，并为新用户提供更好更容易理解。
 
 ### 新增
 * 在模板输出中添加了缺少的 `<DOCTYPE html>` 标签，以避免在浏览器中进入怪异模式。

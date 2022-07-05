@@ -32,8 +32,8 @@ export default () => {
     return (
         <PageContentBlock title={'账户概况'}>
             {state?.twoFactorRedirect && (
-                <MessageBox title={'需要启用双因素认证'} type={'error'}>
-                    您的帐户必须启用双因素认证才能继续使用。
+                <MessageBox title={'需要启用动态口令认证'} type={'error'}>
+                    您的帐户必须启用动态口令认证才能继续使用。
                 </MessageBox>
             )}
 
@@ -44,7 +44,7 @@ export default () => {
                 <ContentBox css={tw`mt-8 sm:mt-0 sm:ml-8`} title={'更新电子邮箱地址'} showFlashes={'account:email'}>
                     <UpdateEmailAddressForm />
                 </ContentBox>
-                <ContentBox css={tw`md:ml-8 mt-8 md:mt-0`} title={'配置双因素认证'}>
+                <ContentBox css={tw`md:ml-8 mt-8 md:mt-0`} title={'配置动态口令认证'}>
                     <ConfigureTwoFactorForm />
                 </ContentBox>
             </Container>

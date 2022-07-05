@@ -48,7 +48,7 @@ class TwoFactorControllerTest extends ClientApiIntegrationTestCase
 
         $response->assertStatus(Response::HTTP_BAD_REQUEST);
         $response->assertJsonPath('errors.0.code', 'BadRequestHttpException');
-        $response->assertJsonPath('errors.0.detail', '此帐户已启用双因素认证。');
+        $response->assertJsonPath('errors.0.detail', '此帐户已启用动态口令认证。');
     }
 
     /**

@@ -57,7 +57,7 @@ class TwoFactorController extends ClientApiController
     public function index(Request $request)
     {
         if ($request->user()->use_totp) {
-            throw new BadRequestHttpException('此帐户已启用双因素认证。');
+            throw new BadRequestHttpException('此帐户已启用动态口令认证。');
         }
 
         return new JsonResponse([
