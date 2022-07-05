@@ -8,7 +8,7 @@
 ![Alt](https://repobeats.axiom.co/api/embed/9e3f7d2c6db2f248adf85b55e7ebd4a3a4911bdf.svg "Repobeats analytics image")
 
 # 翼龙面板
-翼龙® 是一个免费的开源游戏服务器管理面板，使用 PHP、React 和 Go 构建。Pterodactyl 在设计时考虑了安全性，在隔离的 Docker 容器中运行所有游戏服务器，同时向最终用户展示了美观直观的 UI。
+Pterodactyl® 是一个免费的开源游戏服务器管理面板，使用 PHP、React 和 Go 构建。Pterodactyl 在设计时考虑了安全性，在隔离的 Docker 容器中运行所有游戏服务器，同时向最终用户展示了美观直观的 UI。
 不要再安于现状了。让游戏服务器成为您平台上的一等公民。
 
 **此仓库将同步上游进行汉化 , 在大部分情况下，构建的 Releases 会经过构建测试，构建成功后才会发出来，如果出现了问题，一般都不是致命的。**
