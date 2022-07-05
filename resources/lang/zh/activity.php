@@ -1,6 +1,15 @@
 <?php
 
 /**
+ * Pterodactyl CHINA - Panel
+ * Copyright (c) 2015 - 2017 Dane Everitt <dane@daneeveritt.com>.
+ * Simplified Chinese Translation Copyright (c) 2018 - 2022 ValiantShishu <vlssu@vlssu.com>.
+ *
+ * This software is licensed under the terms of the MIT license.
+ * https://opensource.org/licenses/MIT
+ */
+
+/**
  * Contains all of the translation strings for different activity log
  * events. These should be keyed by the value in front of the colon (:)
  * in the event name. If there is no colon present, they should live at

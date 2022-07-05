@@ -1,6 +1,6 @@
 <?php
 /**
- * Pterodactyl - Panel
+ * Pterodactyl CHINA - Panel
  * Copyright (c) 2015 - 2017 Dane Everitt <dane@daneeveritt.com>.
  * Simplified Chinese Translation Copyright (c) 2018 - 2022 ValiantShishu <vlssu@vlssu.com>.
  *

@@ -1,5 +1,14 @@
 <?php
 
+/**
+ * Pterodactyl CHINA - Panel
+ * Copyright (c) 2015 - 2017 Dane Everitt <dane@daneeveritt.com>.
+ * Simplified Chinese Translation Copyright (c) 2018 - 2022 ValiantShishu <vlssu@vlssu.com>.
+ *
+ * This software is licensed under the terms of the MIT license.
+ * https://opensource.org/licenses/MIT
+ */
+
 return [
     'location' => [
         'no_location_found' => '找不到与提供的标识码匹配的记录。',
