@@ -9,9 +9,10 @@
 
 # 翼龙面板
 Pterodactyl® 是一个免费的开源游戏服务器管理面板，使用 PHP、React 和 Go 构建。Pterodactyl 在设计时考虑了安全性，在隔离的 Docker 容器中运行所有游戏服务器，同时向最终用户展示了美观直观的 UI。
+
 不要再安于现状了。让游戏服务器成为您平台上的一等公民。
 
-**此仓库将同步上游进行汉化 , 在大部分情况下，构建的 Releases 会经过构建测试，构建成功后才会发出来，如果出现了问题，一般都不是致命的。**
+**此仓库将实时同步上游进行汉化 , 发布的 Releases 会经过构建测试成功后才会发布，大部分情况下是不会出现问题，如果有一般不会致命，开发版会第一时间修复/更新内容。**
 
 ![Image](https://cdn.pterodactyl.io/site-assets/pterodactyl_v1_demo.gif)
 
@@ -21,11 +22,12 @@ Pterodactyl® 是一个免费的开源游戏服务器管理面板，使用 PHP�
 * [社区支援文档](https://pterodactyl.top/community/about.html)
 * 或者，[翼龙中国社区](https://bbs.pterodactyl.top) 获得更多帮助
 
-## Sponsors
+<!--
+## 赞助商
 I would like to extend my sincere thanks to the following sponsors for helping fund Pterodactyl's developement.
 [Interested in becoming a sponsor?](https://github.com/sponsors/DaneEveritt)
 
-| Company | About |
+| 公司 | 关于 |
 | ------- | ----- |
 | [**WISP**](https://wisp.gg) | Extra features. |
 | [**BisectHosting**](https://www.bisecthosting.com/) | BisectHosting provides Minecraft, Valheim and other server hosting services with the highest reliability and lightning fast support since 2012. |
@@ -38,7 +40,7 @@ I would like to extend my sincere thanks to the following sponsors for helping f
 | [**HostEZ**](https://hostez.io) | Providing North America Valheim, Minecraft and other popular games with low latency, high uptime and maximum availability. EZ! |
 | [**VibeGAMES**](https://vibegames.net/) | VibeGAMES is a game server provider that specializes in DDOS protection for the games we offer. We have multiple locations in the US, Brazil, France, Germany, Singapore, Australia and South Africa.|
 | [**Gamenodes**](https://gamenodes.nl) | Gamenodes love quality. For Minecraft, Discord Bots and other services, among others. With our own programmers, we provide just that little bit of extra service! |
-
+-->
 ### 支持的游戏
 我们通过使用 Docker 容器隔离每个实例来支持各种游戏，为您提供强大的功能
 在全球范围内托管您的游戏，而不必让每台物理机器都因安装额外的依赖而变得臃肿。
