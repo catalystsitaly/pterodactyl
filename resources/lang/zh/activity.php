@@ -46,6 +46,15 @@ return [
     ],
     'server' => [
         'reinstall' => '重装服务器',
+        'console' => [
+            'command' => '在服务器上执行 ":command"',
+        ],
+        'power' => [
+            'start' => '启动了服务器',
+            'stop' => '停止了服务器',
+            'restart' => '重启了服务器',
+            'kill' => '强制停止了服务器',
+        ],
         'backup' => [
             'download' => '下载了 :name 备份',
             'delete' => '删除了 :name 备份',
