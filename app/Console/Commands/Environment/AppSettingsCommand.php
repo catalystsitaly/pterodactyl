@@ -110,7 +110,7 @@ class AppSettingsCommand extends Command
             config('app.url', 'http://example.org')
         );
 
-        $this->output->comment('时区应与 PHP 支持的时区之一匹配 北京时区是 Asia/Shanghai。 如果不确定，请参考 http://php.net/manual/en/timezones.php.');
+        $this->output->comment('时区应与 PHP 支持的时区之一匹配 北京时区是 Asia/Shanghai。如果不确定，请参考 http://php.net/manual/en/timezones.php.');
         $this->variables['APP_TIMEZONE'] = $this->option('timezone') ?? $this->anticipate(
             '应用时区',
             DateTimeZone::listIdentifiers(DateTimeZone::ALL),
@@ -169,7 +169,7 @@ class AppSettingsCommand extends Command
             return;
         }
 
-        $this->output->note('您为一个或多个选项选择了 Redis 驱动程序，请在下面提供有效的连接信息。 在大多数情况下，您可以使用提供的默认值，除非您修改了 Redis 主机设置.');
+        $this->output->note('您为一个或多个选项选择了 Redis 驱动程序，请在下面提供有效的连接信息。在大多数情况下，您可以使用提供的默认值，除非您修改了 Redis 主机设置.');
         $this->variables['REDIS_HOST'] = $this->option('redis-host') ?? $this->ask(
             'Redis 主机',
             config('database.redis.default.host')

@@ -23,7 +23,7 @@ return [
         'reset-password' => '请求密码重置',
         'checkpoint' => '请求动态口令认证',
         'recovery-token' => '使用动态口令认证的恢复令牌',
-        'token' => 'Solved two-factor challenge',
+        'token' => '解决了动态口令认证的质疑',
         'ip-blocked' => '阻止不在IP白名单里的请求',
     ],
     'user' => [

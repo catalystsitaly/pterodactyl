@@ -71,7 +71,7 @@ class DatabaseSettingsCommand extends Command
      */
     public function handle()
     {
-        $this->output->note('强烈建议不要使用“localhost”作为您的数据库主机，因为我们已经看到频繁的套接字连接问题。 如果你想使用本地连接，你应该使用“127.0.0.1”.');
+        $this->output->note('强烈建议不要使用“localhost”作为您的数据库主机，因为我们已经看到频繁的套接字连接问题。如果你想使用本地连接，你应该使用“127.0.0.1”.');
         $this->variables['DB_HOST'] = $this->option('host') ?? $this->ask(
             '数据库主机地址',
             config('database.connections.mysql.host', '127.0.0.1')
@@ -87,7 +87,7 @@ class DatabaseSettingsCommand extends Command
             config('database.connections.mysql.database', 'panel')
         );
 
-        $this->output->note('使用“root”帐户进行 MySQL 连接不仅非常不被推荐，而且此应用程序也不允许这样做。 您需要专门为此软件创建一个有权限的 MySQL 用户.');
+        $this->output->note('使用“root”帐户进行 MySQL 连接不仅非常不被推荐，而且此应用程序也不允许这样做。您需要专门为此软件创建一个有权限的 MySQL 用户.');
         $this->variables['DB_USERNAME'] = $this->option('username') ?? $this->ask(
             '数据库用户名',
             config('database.connections.mysql.username', 'pterodactyl')
@@ -106,8 +106,8 @@ class DatabaseSettingsCommand extends Command
         try {
             $this->testMySQLConnection();
         } catch (PDOException $exception) {
-            $this->output->error(sprintf('无法使用提供的凭据连接到 MySQL 服务器。 返回的错误是 "%s".', $exception->getMessage()));
-            $this->output->error('您的连接凭据尚未保存。 在继续之前，您需要提供有效的连接信息.');
+            $this->output->error(sprintf('无法使用提供的凭据连接到 MySQL 服务器。返回的错误是 "%s".', $exception->getMessage()));
+            $this->output->error('您的连接凭据尚未保存。在继续之前，您需要提供有效的连接信息.');
 
             if ($this->confirm('回去再试一次?')) {
                 $this->database->disconnect('_pterodactyl_command_test');

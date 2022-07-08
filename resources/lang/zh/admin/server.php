@@ -14,7 +14,7 @@ return [
         'marked_as_failed' => '由于该服务器之前被标记为安装失败。在此状态下无法切换当前状态。',
         'bad_variable' => ':name 变量存在验证错误。',
         'daemon_exception' => '尝试与守护程序通信时出现异常，导致 HTTP/:code 响应代码。已记录此异常。(请求 id: :request_id)',
-        'default_allocation_not_found' => 'The requested default allocation was not found in this server\'s allocations.',
+        'default_allocation_not_found' => '在此服务器的分配中找不到所请求的默认分配。',
     ],
     'alerts' => [
         'startup_changed' => '该服务器的启动配置已经更新。如果此服务器的预设组或预设被更改，现在将进行重新安装。',

@@ -75,4 +75,4 @@ Pterodactyl® Copyright © 2015 - 2022 Dane Everitt and contributors.
 Code released under the [MIT License](./LICENSE.md).
 
 此本地化项目同样遵循 翼龙开源协议 与 MIT 开源协议   
-引用资源文件/汉化文本请注意作者署名。  
+引用资源文件/汉化文本请注意作者署名。 
