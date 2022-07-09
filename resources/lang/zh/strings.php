@@ -25,7 +25,7 @@ return [
     'connection' => '连接',
     'memory' => '内存',
     'cpu' => 'CPU',
-    'disk' => '磁盘',
+    'disk' => '存储空间',
     'status' => '状态',
     'search' => '搜索',
     'suspended' => '暂停',

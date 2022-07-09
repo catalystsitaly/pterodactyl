@@ -30,6 +30,6 @@ return [
         'node_required' => '您必须至少配置一个节点，然后才能将服务器添加到此面板。',
         'transfer_nodes_required' => '您必须至少配置两个节点，然后才能转移服务器。',
         'transfer_started' => '服务器转移已开始。',
-        'transfer_not_viable' => '您选择的节点没有足够的磁盘空间或内存来容纳此服务器。',
+        'transfer_not_viable' => '您选择的节点没有足够的存储空间或内存来容纳此服务器。',
     ],
 ];

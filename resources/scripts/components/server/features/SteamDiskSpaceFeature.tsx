@@ -50,14 +50,14 @@ const SteamDiskSpaceFeature = () => {
             {isAdmin ? (
                 <>
                     <div css={tw`mt-4 sm:flex items-center`}>
-                        <h2 css={tw`text-2xl mb-4 text-neutral-100 `}>可用磁盘空间不足...</h2>
+                        <h2 css={tw`text-2xl mb-4 text-neutral-100 `}>可用存储空间不足...</h2>
                     </div>
                     <p css={tw`mt-4`}>
-                        此服务器已用完可用磁盘空间，无法完成安装或更新过程。
+                        此服务器已用完可用存储空间，无法完成安装或更新过程。
                     </p>
                     <p css={tw`mt-4`}>
                         通过在托管此服务器的主机上输入{' '}
-                        <code css={tw`font-mono bg-neutral-900 rounded py-1 px-2`}>df -h</code> 确保主机有足够的磁盘空间。删除文件或增加可用磁盘空间以解决问题。
+                        <code css={tw`font-mono bg-neutral-900 rounded py-1 px-2`}>df -h</code> 确保主机有足够的存储空间。删除文件或增加可用存储空间以解决问题。
                     </p>
                     <div css={tw`mt-8 sm:flex items-center justify-end`}>
                         <Button onClick={() => setVisible(false)} css={tw`w-full sm:w-auto border-transparent`}>
@@ -68,11 +68,11 @@ const SteamDiskSpaceFeature = () => {
             ) : (
                 <>
                     <div css={tw`mt-4 sm:flex items-center`}>
-                        <h2 css={tw`text-2xl mb-4 text-neutral-100`}>可用磁盘空间不足...</h2>
+                        <h2 css={tw`text-2xl mb-4 text-neutral-100`}>可用存储空间不足...</h2>
                     </div>
                     <p css={tw`mt-4`}>
-                        此服务器已用完可用磁盘空间，无法完成安装或更新过程。
-                        请与管理员联系并告知他们磁盘空间问题。
+                        此服务器已用完可用存储空间，无法完成安装或更新过程。
+                        请与管理员联系并告知他们存储空间问题。
                     </p>
                     <div css={tw`mt-8 sm:flex items-center justify-end`}>
                         <Button onClick={() => setVisible(false)} css={tw`w-full sm:w-auto border-transparent`}>
