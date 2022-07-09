@@ -22,7 +22,7 @@ class ServerStateConflictException extends ConflictHttpException
         } elseif ($server->status === Server::STATUS_RESTORING_BACKUP) {
             $message = '此服务器当前正在从备份中恢复，请稍后再试。';
         } elseif (!is_null($server->transfer)) {
-            $message = '此服务器目前正在转移到新计算机上，请稍后再试。';
+            $message = '此服务器目前正在转移到新主机上，请稍后再试。';
         }
 
         parent::__construct($message, $previous);

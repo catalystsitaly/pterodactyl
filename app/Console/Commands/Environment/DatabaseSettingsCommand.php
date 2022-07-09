@@ -83,7 +83,7 @@ class DatabaseSettingsCommand extends Command
         );
 
         $this->variables['DB_DATABASE'] = $this->option('database') ?? $this->ask(
-            'Database Name',
+            '数据库名称',
             config('database.connections.mysql.database', 'panel')
         );
 
