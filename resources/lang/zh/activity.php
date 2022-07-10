@@ -25,6 +25,10 @@ return [
         'recovery-token' => '使用动态口令认证的恢复令牌',
         'token' => '解决了动态口令认证的质疑',
         'ip-blocked' => '阻止不在IP白名单里的请求',
+        'sftp' => [
+            'success' => '使用 SFTP 登录',
+            'fail' => 'SFTP 登录失败',
+        ],
     ],
     'user' => [
         'account' => [
@@ -104,6 +108,9 @@ return [
             'create' => '为 :name 计划创建了一个新的 ":action" 任务',
             'update' => '更新了 :name 计划的 ":action" 任务',
             'delete' => '删除了 :name 计划的一个任务',
+        ],
+        'sftp' => [
+            'denied' => '由于权限原因阻止了 SFTP 访问',
         ],
         'settings' => [
             'rename' => '将服务器从 :old 重命名为 :new',

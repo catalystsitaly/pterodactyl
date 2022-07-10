@@ -4,7 +4,6 @@
 ![GitHub Issues](https://img.shields.io/github/issues/pterodactyl-china/panel?style=for-the-badge&logo=appveyor)
 ![GitHub Releases](https://img.shields.io/github/v/release/pterodactyl-china/panel?style=for-the-badge&logo=appveyor)
 ![GitHub Releases](https://img.shields.io/github/downloads/pterodactyl-china/panel/total?style=for-the-badge)
-![GitHub contributors](https://img.shields.io/github/contributors/pterodactyl-china/panel?style=for-the-badge)
 ![Alt](https://repobeats.axiom.co/api/embed/9e3f7d2c6db2f248adf85b55e7ebd4a3a4911bdf.svg "Repobeats analytics image")
 
 # 翼龙面板

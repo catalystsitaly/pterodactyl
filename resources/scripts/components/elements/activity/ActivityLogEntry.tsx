@@ -65,12 +65,12 @@ export default ({ activity, children }: Props) => {
                         </Link>
                         <div className={classNames(style.icons, 'group-hover:text-gray-300')}>
                             {activity.isApi && (
-                                <Tooltip placement={'top'} content={'Using API Key'}>
+                                <Tooltip placement={'top'} content={'使用 API 密钥'}>
                                     <TerminalIcon />
                                 </Tooltip>
                             )}
                             {activity.properties.using_sftp && (
-                                <Tooltip placement={'top'} content={'Using SFTP'}>
+                                <Tooltip placement={'top'} content={'使用 SFTP'}>
                                     <FolderOpenIcon />
                                 </Tooltip>
                             )}
