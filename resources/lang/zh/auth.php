@@ -16,7 +16,7 @@ return [
 
     'forgot_password' => [
         'label' => '忘记密码？',
-        'label_help' => '输入您帐户的邮箱地址用来接收重置密码的说明。',
+        'label_help' => '输入您帐户的电子邮箱地址用来接收重置密码的说明。',
         'button' => '找回账户',
     ],
 
@@ -25,9 +25,9 @@ return [
     ],
 
     'two_factor' => [
-        'label' => '动态口令认证令牌',
+        'label' => '动态口令',
         'label_help' => '此帐户需要进行动态口令认证才能继续。请输入您设备生成的验证码以完成此登录。',
-        'checkpoint_failed' => '动态口令认证令牌无效。',
+        'checkpoint_failed' => '动态口令无效。',
     ],
 
     'throttle' => '登录尝试次数过多。请在 :seconds 秒后重试。',

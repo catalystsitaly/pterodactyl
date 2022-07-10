@@ -100,7 +100,7 @@ class CreateServerSubuserTest extends ClientApiIntegrationTestCase
         ]);
 
         $response->assertStatus(Response::HTTP_UNPROCESSABLE_ENTITY);
-        $response->assertJsonPath('errors.0.detail', 'email 必须介于 1 和 191 字符之间。');
+        $response->assertJsonPath('errors.0.detail', 'email 必须介于 1 - 191 字符之间。');
         $response->assertJsonPath('errors.0.meta.source_field', 'email');
     }
 
@@ -153,7 +153,7 @@ class CreateServerSubuserTest extends ClientApiIntegrationTestCase
 
         $response->assertStatus(Response::HTTP_BAD_REQUEST);
         $response->assertJsonPath('errors.0.code', 'ServerSubuserExistsException');
-        $response->assertJsonPath('errors.0.detail', '具有该邮箱地址的用户已被指定为该服务器的子用户。');
+        $response->assertJsonPath('errors.0.detail', '具有该电子邮箱地址的用户已被指定为该服务器的子用户。');
     }
 
     public function permissionsDataProvider(): array

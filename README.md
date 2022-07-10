@@ -15,11 +15,11 @@ Pterodactyl® 是一个免费的开源游戏服务器管理面板，使用 PHP�
 
 ![Image](https://cdn.pterodactyl.io/site-assets/pterodactyl_v1_demo.gif)
 
-## 文档
+## 翼龙中文文档
 * [Panel 前端中文文档](https://pterodactyl.top/panel/1.0/getting_started.html)
 * [Wings 后端中文文档](https://pterodactyl.top/wings/1.0/installing.html)
 * [社区指南文档](https://pterodactyl.top/community/about.html)
-* 或者，[通过翼龙中国社区](https://bbs.pterodactyl.top) 获得更多帮助
+* 或者，[通过翼龙中国社区](https://bbs.pterodactyl.top) 或 [通过 KOOK](https://kook.top/0Grsf5) 获得更多帮助
 
 <!--
 ## 赞助商
@@ -71,7 +71,6 @@ I would like to extend my sincere thanks to the following sponsors for helping f
 
 ## 开源协议
 Pterodactyl® Copyright © 2015 - 2022 Dane Everitt and contributors.
-
 Code released under the [MIT License](./LICENSE.md).
 
 此本地化项目同样遵循 翼龙开源协议 与 MIT 开源协议   

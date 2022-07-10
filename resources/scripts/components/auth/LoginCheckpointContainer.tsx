@@ -35,8 +35,8 @@ const LoginCheckpointContainer = () => {
                     title={isMissingDevice ? '恢复代码' : '登录代码'}
                     description={
                         isMissingDevice
-                            ? '输入在此帐户上设置 2-Factor 身份验证时生成的恢复代码之一以继续。'
-                            : '输入由您的设备生成的 2-Factor 双因素令牌。'
+                            ? '输入在此帐户上设置动态口令认证时生成的恢复代码之一以继续。'
+                            : '输入由您的设备随机生成的动态口令。'
                     }
                     type={'text'}
                     autoComplete={'one-time-code'}

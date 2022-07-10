@@ -44,7 +44,7 @@ return [
     'subusers' => [
         'editing_self' => '不允许您修改自己的子用户帐户。',
         'user_is_owner' => '您不能将服务器所有者添加为此服务器的子用户。',
-        'subuser_exists' => '具有该邮箱地址的用户已被指定为该服务器的子用户。',
+        'subuser_exists' => '具有该电子邮箱地址的用户已被指定为该服务器的子用户。',
     ],
     'databases' => [
         'delete_has_databases' => '无法删除关联了数据库的数据库主机服务器。',

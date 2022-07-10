@@ -92,7 +92,7 @@ class ApiKeyControllerTest extends ClientApiIntegrationTestCase
                 'allowed_ips' => $ips,
             ])
             ->assertUnprocessable()
-            ->assertJsonPath('errors.0.detail', 'allowed ips 不能超过 50 项。');
+            ->assertJsonPath('errors.0.detail', 'allowed ips 不能超过 50 个数字。');
     }
 
     /**

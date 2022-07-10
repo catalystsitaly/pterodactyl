@@ -22,8 +22,8 @@ return [
         'password-reset' => '重设密码',
         'reset-password' => '请求密码重置',
         'checkpoint' => '请求动态口令认证',
-        'recovery-token' => '使用动态口令认证的恢复令牌',
-        'token' => '解决了动态口令认证的质疑',
+        'recovery-token' => '使用了动态口令恢复代码',
+        'token' => '正确输入了动态口令',
         'ip-blocked' => '阻止不在IP白名单里的请求',
         'sftp' => [
             'success' => '使用 SFTP 登录',
@@ -32,7 +32,7 @@ return [
     ],
     'user' => [
         'account' => [
-            'email-changed' => '已将邮箱从 :old 更改为 :new',
+            'email-changed' => '已将电子邮箱从 :old 更改为 :new',
             'password-changed' => '已更改密码',
         ],
         'api-key' => [
