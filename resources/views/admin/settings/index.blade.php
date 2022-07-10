@@ -59,7 +59,7 @@
                                             <option value="{{ $key }}" @if(config('app.locale') === $key) selected @endif>{{ $value }}</option>
                                         @endforeach
                                     </select>
-                                    <p class="text-muted"><small>此功能需要面板的第一个用户设置为中文语言，返回这里并再按一次保存，即可同步</small></p>
+                                    <p class="text-muted"><small>此功能需要面板的首位用户设置为相应的语言，返回这里并再按一次保存，即可同步</small></p>
                                 </div>
                             </div>
                         </div>
