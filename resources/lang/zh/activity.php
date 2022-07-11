@@ -26,7 +26,6 @@ return [
         'token' => '正确输入了动态口令',
         'ip-blocked' => '阻止不在IP白名单里的请求',
         'sftp' => [
-            'success' => '使用 SFTP 登录',
             'fail' => 'SFTP 登录失败',
         ],
     ],
@@ -40,8 +39,8 @@ return [
             'delete' => '已删除 API 密钥 :identifier',
         ],
         'ssh-key' => [
-            'create' => '将 SSH 密钥 :fingerprint 添加到帐户',
-            'delete' => '从帐户中删除了 SSH 密钥 :fingerprint',
+            'create' => '将 SSH 私钥 :fingerprint 添加到帐户',
+            'delete' => '从帐户中删除了 SSH 私钥 :fingerprint',
         ],
         'two-factor' => [
             'create' => '启用动态口令认证',
@@ -92,6 +91,19 @@ return [
             'write' => '写了一些新内容到 :file 中',
             'upload' => '上传了一些文件',
         ],
+        'sftp' => [
+            'denied' => '由于权限原因阻止了 SFTP 访问',
+            'create_one' => '创建了 :files.0',
+            'create_other' => '创建了新的 :count 文件',
+            'write_one' => '修改了 :files.0 的内容',
+            'write_other' => '修改了 :count 文件的内容',
+            'delete_one' => '删除了 :files.0',
+            'delete_other' => '删除了 :count 文件',
+            'create-directory_one' => '创建了 :files.0 目录',
+            'create-directory_other' => '创建了 :count 个目录',
+            'rename_one' => '将 :files.0.from 重命名为 :files.0.to',
+            'rename_other' => '重命名或移动了 :count 个文件',
+        ],
         'allocation' => [
             'create' => '添加 :allocation 到服务器',
             'notes' => '将 :allocation 的备注从 ":old" 更新为 ":new"',
@@ -108,9 +120,6 @@ return [
             'create' => '为 :name 计划创建了一个新的 ":action" 任务',
             'update' => '更新了 :name 计划的 ":action" 任务',
             'delete' => '删除了 :name 计划的一个任务',
-        ],
-        'sftp' => [
-            'denied' => '由于权限原因阻止了 SFTP 访问',
         ],
         'settings' => [
             'rename' => '将服务器从 :old 重命名为 :new',
