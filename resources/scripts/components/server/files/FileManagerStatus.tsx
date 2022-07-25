@@ -77,7 +77,7 @@ export default () => {
     return (
         <>
             {count > 0 && (
-                <Tooltip content={`${count} 文件正在上传，点击查看`}>
+                <Tooltip content={`${count} 个文件正在上传，点击查看`}>
                     <button className={'flex items-center justify-center w-10 h-10'} onClick={setOpen.bind(this, true)}>
                         <Spinner progress={(progress.uploaded / progress.total) * 100} className={'w-8 h-8'} />
                         <CloudUploadIcon className={'h-3 absolute mx-auto animate-pulse'} />
