@@ -106,7 +106,7 @@ const ServerDetailsBlock = ({ className }: { className?: string }) => {
                     '离线'
                 )}
             </StatBlock>
-            <StatBlock icon={faMicrochip} title={'CPU 使用率'} color={getBackgroundColor(stats.cpu, limits.cpu)}>
+            <StatBlock icon={faMicrochip} title={'CPU'} color={getBackgroundColor(stats.cpu, limits.cpu)}>
                 {status === 'offline' ? (
                     <span className={'text-gray-400'}>离线</span>
                 ) : (
@@ -115,7 +115,7 @@ const ServerDetailsBlock = ({ className }: { className?: string }) => {
             </StatBlock>
             <StatBlock
                 icon={faMemory}
-                title={'内存使用率'}
+                title={'内存'}
                 color={getBackgroundColor(stats.memory / 1024, limits.memory * 1024)}
             >
                 {status === 'offline' ? (
