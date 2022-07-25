@@ -83,7 +83,7 @@ const StartupContainer = () => {
             <ServerError title={'卧槽!'} message={httpErrorToHuman(error)} onRetry={() => mutate()} />
         )
     ) : (
-        <ServerContentBlock title={'服务器启动设置'} showFlashKey={'startup:image'}>
+        <ServerContentBlock title={'启动设置'} showFlashKey={'startup:image'}>
             <div css={tw`md:flex`}>
                 <TitledGreyBox title={'启动命令'} css={tw`flex-1`}>
                     <div css={tw`px-1 py-2`}>
