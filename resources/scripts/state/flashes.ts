@@ -26,7 +26,7 @@ const flashes: FlashStore = {
     }),
 
     addError: action((state, payload) => {
-        state.items.push({ type: 'error', title: 'Error', ...payload });
+        state.items.push({ type: 'error', title: '错误', ...payload });
     }),
 
     clearAndAddHttpError: action((state, payload) => {
@@ -38,7 +38,7 @@ const flashes: FlashStore = {
             state.items = [
                 {
                     type: 'error',
-                    title: 'Error',
+                    title: '错误',
                     key: payload.key,
                     message: httpErrorToHuman(payload.error),
                 },

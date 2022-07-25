@@ -68,7 +68,7 @@ export default ({ className }: WithClassname) => {
         clearAndAddHttpError();
         const list = Array.from(files);
         if (list.some((file) => !file.type && file.size % 4096 === 0)) {
-            return addError('Folder uploads are not supported at this time.', 'Error');
+            return addError('目前不支持文件夹上传。', '错误');
         }
 
         if (!list.length) {
