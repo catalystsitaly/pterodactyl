@@ -77,7 +77,7 @@ export default {
         {
             path: '/files',
             permission: 'file.*',
-            name: '文件管理器',
+            name: '文件',
             component: FileManagerContainer,
         },
         {
@@ -107,7 +107,7 @@ export default {
         {
             path: '/users',
             permission: 'user.*',
-            name: '服务器管理子用户',
+            name: '子用户',
             component: UsersContainer,
         },
         {
@@ -125,7 +125,7 @@ export default {
         {
             path: '/startup',
             permission: 'startup.*',
-            name: '服务器启动设置',
+            name: '启动',
             component: StartupContainer,
         },
         {
