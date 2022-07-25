@@ -15,7 +15,7 @@ trait MocksMiddlewareClosure
     protected function getClosureAssertions(): Closure
     {
         if (is_null($this->request)) {
-            throw new BadFunctionCallException('Calling getClosureAssertions without defining a request object is not supported.');
+            throw new BadFunctionCallException('不支持在不定义请求对象的情况下调用 getClosureAssertions。');
         }
 
         return function ($response) {

@@ -39,7 +39,7 @@ trait IntegrationJsonRequestAssertions
                 [
                     'code' => 'AccessDeniedHttpException',
                     'status' => '403',
-                    'detail' => 'This action is unauthorized.',
+                    'detail' => '此行为未经授权。',
                 ],
             ],
         ], true);
