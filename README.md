@@ -4,6 +4,7 @@
 ![GitHub Issues](https://img.shields.io/github/issues/pterodactyl-china/panel?style=for-the-badge&logo=appveyor)
 ![GitHub Releases](https://img.shields.io/github/v/release/pterodactyl-china/panel?style=for-the-badge&logo=appveyor)
 ![GitHub Releases](https://img.shields.io/github/downloads/pterodactyl-china/panel/total?style=for-the-badge)
+![GitHub Releases Latest](https://img.shields.io/github/downloads/pterodactyl-china/panel/latest/total?style=for-the-badge)
 ![Alt](https://repobeats.axiom.co/api/embed/9e3f7d2c6db2f248adf85b55e7ebd4a3a4911bdf.svg "Repobeats analytics image")
 
 # 翼龙面板
@@ -19,7 +20,7 @@ Pterodactyl® 是一个免费的开源游戏服务器管理面板，使用 PHP�
 * [Panel 前端中文文档](https://pterodactyl.top/panel/1.0/getting_started.html)
 * [Wings 后端中文文档](https://pterodactyl.top/wings/1.0/installing.html)
 * [社区指南文档](https://pterodactyl.top/community/about.html)
-* 或者，[通过翼龙中国社区](https://bbs.pterodactyl.top) 或 [通过 KOOK](https://kook.top/0Grsf5) 获得更多帮助
+* 或者，[通过 KOOK](https://kook.top/0Grsf5) 获得更多帮助
 
 <!--
 ## 赞助商
