@@ -4,31 +4,31 @@ This file is a running track of new features and fixes to each version of the pa
 This project follows [Semantic Versioning](http://semver.org) guidelines.
 
 ## v1.10.1
-### Fixed
-* Fixes a surprise `clock()` function that was used for debugging and should not have made it into the release. This was causing activity events to not properly sync between the Panel and Wings.
+### 修复
+* 修复了一个 `clock()` 函数，该函数用于调试并且不应该进入发行版。这导致面板和 Wings 之间的活动事件无法正确同步。
 
 ## v1.10.0
-### Fixed
-* Fixes improper cache key naming on the frontend causing server activity logs to be duplicated across server page views.
-* Fixes overflow issues on dialogs when the internal content is too long.
-* Fixes spinner overlay on console improperly taking up the entire page making it impossible to use navigation controls.
-* Fixes 2FA QR code background being too dark for some phones to properly scan.
-* File manager now properly displays an error message if a user attempts to upload a folder rather than files.
-* Fixes the "Create Directory" dialog persisting the previously entered value when it is re-opened.
+### 修复
+* 修复了前端缓存键命名不当导致服务器活动日志在服务器页面视图中重复的问题。
+* 修复了内部内容过长时对话框的溢出问题。
+* 修复了控制台上的微调器覆盖不正确地占用整个页面，从而无法使用导航控件。
+* 修复了动态口令认证的二维码背景太暗导致某些手机无法正确扫描的问题。
+* 如果用户尝试上传文件夹而不是文件，文件管理器现在会正确显示错误消息。
+* 修复了“创建目录”对话框在重新打开时会保留先前输入的值。
 
-### Changed
-* IP addresses in activity logs are now always displayed to administrators, regardless of if they own the server or not.
-* Scroll down indicator on the console has been changed to a down arrow to be clearer.
-* Docker builds have been updated to use `PHP 8.1`.
-* Recaptcha validation domain is now configurable using the `RECAPTCHA_DOMAIN` environment variable.
-* Drag and drop overlay on the file manager has been tweaked to be slightly more consistent with the frontend style and be a little easier to read.
+### 更新
+* 现在，无论管理员是否拥有服务器，活动日志中的 IP 地址都会始终显示给管理员。
+* 控制台上的向下滚动指示器已更改为向下箭头，以便更清晰。
+* Docker 构建已更新为使用 `PHP 8.1`。
+* Recaptcha 验证域现在可以使用 `RECAPTCHA_DOMAIN` 环境变量进行配置（默认域中国可用）。
+* 文件管理器上的拖放覆盖已经过调整，使其与前端样式更加一致，并且更易于阅读。
 
-### Added
-* Adds support for the `user_uuid` claim on all generated JWTs which allows Wings to properly identify the user performing each action.
-* Adds support for recieving external activity log events from Wings instances (power state, commands, SFTP, and uploads).
-* Adds support for tracking failed password-based SFTP logins.
-* Server name and description are now passed along to Wings making them available in egg variables for parsing and including.
-* Adds support for displaying all active file uploads in the file manager.
+### 新增
+* 在所有生成的 JWT 上添加对 `user_uuid` 声明支持，这允许 Wings 正确识别执行每个操作的用户。
+* 添加了对从 Wings 实例接收外部活动日志事件（电源状态、命令、SFTP 和上传）的支持。
+* 添加了对跟踪基于密码的 SFTP 登录失败的日志支持。
+* 服务器名称和描述现在传递给 Wings，使它们可以在预设变量中进行解析和包含。
+* 添加了对在文件管理器中显示所有活动文件上传的支持。
 
 ## v1.9.2
 ### 修复
