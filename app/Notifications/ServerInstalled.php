@@ -64,6 +64,6 @@ class ServerInstalled extends Notification implements ShouldQueue, ReceivesEvent
             ->greeting('你好 ' . $this->user->username . '.')
             ->line('您的服务器已完成安装，现在可以使用了。')
             ->line('服务器名称: ' . $this->server->name)
-            ->action('点此登入系统并开始使用', route('index'));
+            ->action('点此登入并开始使用', route('index'));
     }
 }
