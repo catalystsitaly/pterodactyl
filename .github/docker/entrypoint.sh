@@ -5,75 +5,75 @@ mkdir -p /var/log/panel/logs/ /var/log/supervisord/ /var/log/nginx/ /var/log/php
   && chmod 777 /var/log/panel/logs/ \
   && ln -s /var/log/panel/logs/ /app/storage/logs/
 
-## check for .env file and generate app keys if missing
+## 检查 .env 文件并在缺少时生成应用程序密钥
 if [ -f /app/var/.env ]; then
-  echo "external vars exist."
+  echo "存在外部变量."
   rm -rf /app/.env
   ln -s /app/var/.env /app/
 else
-  echo "external vars don't exist."
+  echo "不存在外部变量."
   rm -rf /app/.env
   touch /app/var/.env
 
-  ## manually generate a key because key generate --force fails
+  ## 由于 key generate --force 失败，手动生成密钥
   if [ -z $APP_KEY ]; then
-     echo -e "Generating key."
+     echo -e "生成密钥."
      APP_KEY=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1)
-     echo -e "Generated app key: $APP_KEY"
+     echo -e "生成的应用程序密钥：$APP_KEY"
      echo -e "APP_KEY=$APP_KEY" > /app/var/.env
   else
-    echo -e "APP_KEY exists in environment, using that."
+    echo -e "APP_KEY 存在于环境中，已使用它."
     echo -e "APP_KEY=$APP_KEY" > /app/var/.env
   fi
 
   ln -s /app/var/.env /app/
 fi
 
-echo "Checking if https is required."
+echo "正在检查是否需要 https."
 if [ -f /etc/nginx/http.d/panel.conf ]; then
-  echo "Using nginx config already in place."
+  echo "nginx 配置已经就位."
   if [ $LE_EMAIL ]; then
-    echo "Checking for cert update"
+    echo "正在检查证书更新"
     certbot certonly -d $(echo $APP_URL | sed 's~http[s]*://~~g')  --standalone -m $LE_EMAIL --agree-tos -n
   else
-    echo "No letsencrypt email is set"
+    echo "未设置 Letsencrypt 电子邮箱"
   fi
 else
-  echo "Checking if letsencrypt email is set."
+  echo "正在检查是否设置了 letsencrypt 电子邮箱."
   if [ -z $LE_EMAIL ]; then
-    echo "No letsencrypt email is set using http config."
+    echo "http 配置文件中没有设置 letencrypt 电子邮箱."
     cp .github/docker/default.conf /etc/nginx/http.d/panel.conf
   else
-    echo "writing ssl config"
+    echo "编写 ssl 配置"
     cp .github/docker/default_ssl.conf /etc/nginx/http.d/panel.conf
-    echo "updating ssl config for domain"
+    echo "更新域名的 ssl 配置"
     sed -i "s|<domain>|$(echo $APP_URL | sed 's~http[s]*://~~g')|g" /etc/nginx/http.d/panel.conf
-    echo "generating certs"
+    echo "生成证书"
     certbot certonly -d $(echo $APP_URL | sed 's~http[s]*://~~g')  --standalone -m $LE_EMAIL --agree-tos -n
   fi
-  echo "Removing the default nginx config"
+  echo "删除默认的 nginx 配置"
   rm -rf /etc/nginx/http.d/default.conf
 fi
 
 if [[ -z $DB_PORT ]]; then
-  echo -e "DB_PORT not specified, defaulting to 3306"
+  echo -e "未指定 DB_PORT，默认为 3306"
   DB_PORT=3306
 fi
 
-## check for DB up before starting the panel
-echo "Checking database status."
+## 在启动面板之前检查数据库
+echo "正在检查数据库状态."
 until nc -z -v -w30 $DB_HOST $DB_PORT
 do
-  echo "Waiting for database connection..."
-  # wait for 1 seconds before check again
+  echo "正在等待数据库连接..."
+  # 等待 1 秒再检查
   sleep 1
 done
 
-## make sure the db is set up
-echo -e "Migrating and Seeding D.B"
+## 确保数据库已设置
+echo -e "迁移或生成数据库"
 php artisan migrate --seed --force
 
-## start cronjobs for the queue
+## 启动队列的 cronjobs
 echo -e "Starting cron jobs."
 crond -L /var/log/crond -l 5
 
