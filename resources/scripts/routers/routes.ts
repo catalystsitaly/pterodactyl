@@ -52,7 +52,7 @@ export default {
         },
         {
             path: '/api',
-            name: 'API 凭据',
+            name: 'API 凭证',
             component: AccountApiContainer,
         },
         {

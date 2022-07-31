@@ -54,7 +54,7 @@ export default () => {
                 updateToken(uuid, socket);
             } else {
                 setError(
-                    '验证为 WEBSOCKET 提供的凭据时出错。请刷新页面。'
+                    '验证为 WEBSOCKET 提供的凭证时出错。请刷新页面。'
                 );
             }
         });

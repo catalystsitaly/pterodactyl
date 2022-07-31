@@ -43,7 +43,7 @@
 </div>
 <div class="row">
     <div class="col-xs-6 col-sm-3 text-center">
-        <a href="{{ $version->getDiscord() }}"><button class="btn btn-warning" style="width:100%;"><i class="fa fa-fw fa-support"></i> 获取帮助 <small>(翼龙中国社区)</small></button></a>
+        <a href="{{ $version->getDiscord() }}"><button class="btn btn-warning" style="width:100%;"><i class="fa fa-fw fa-support"></i> 获取帮助 <small>(通过 KOOK)</small></button></a>
     </div>
     <div class="col-xs-6 col-sm-3 text-center">
         <a href="https://pterodactyl.top"><button class="btn btn-primary" style="width:100%;"><i class="fa fa-fw fa-link"></i> 翼龙中国文档</button></a>

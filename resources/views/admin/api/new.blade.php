@@ -9,7 +9,7 @@
     <ol class="breadcrumb">
         <li><a href="{{ route('admin.index') }}">管理</a></li>
         <li><a href="{{ route('admin.api.index') }}">应用 API</a></li>
-        <li class="active">新凭据</li>
+        <li class="active">新凭证</li>
     </ol>
 @endsection
 
@@ -51,11 +51,11 @@
                             <label class="control-label" for="memoField">描述 <span class="field-required"></span></label>
                             <input id="memoField" type="text" name="memo" class="form-control">
                         </div>
-                        <p class="text-muted">一旦您分配了权限并创建了这组凭据，您将无法返回并对其进行编辑。如果您需要在以后进行更改，则需要创建一组新的凭据.</p>
+                        <p class="text-muted">一旦您分配了权限并创建了这组凭证，您将无法返回并对其进行编辑。如果您需要在以后进行更改，则需要创建一组新的凭证.</p>
                     </div>
                     <div class="box-footer">
                         {{ csrf_field() }}
-                        <button type="submit" class="btn btn-success btn-sm pull-right">创建凭据</button>
+                        <button type="submit" class="btn btn-success btn-sm pull-right">创建凭证</button>
                     </div>
                 </div>
             </div>

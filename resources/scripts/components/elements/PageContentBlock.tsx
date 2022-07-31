@@ -35,7 +35,7 @@ const PageContentBlock: React.FC<PageContentBlockProps> = ({ title, showFlashKey
                             Pterodactyl&reg;
                         </a>
                         &nbsp;&copy; 2015 - {new Date().getFullYear()}
-                        &nbsp;Software which Sinicizated by&nbsp;
+                        &nbsp;which Sinicizated by&nbsp;
                         <a
                             rel={'noopener nofollow noreferrer'}
                             href={'https://pterodactyl.top'}

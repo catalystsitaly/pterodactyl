@@ -42,7 +42,7 @@
                                             <input type="radio" name="pterodactyl:auth:2fa_required" autocomplete="off" value="0" @if ($level == 0) checked @endif> 不要求
                                         </label>
                                         <label class="btn btn-primary @if ($level == 1) active @endif">
-                                            <input type="radio" name="pterodactyl:auth:2fa_required" autocomplete="off" value="1" @if ($level == 1) checked @endif> 仅管理用户
+                                            <input type="radio" name="pterodactyl:auth:2fa_required" autocomplete="off" value="1" @if ($level == 1) checked @endif> 仅限管理员
                                         </label>
                                         <label class="btn btn-primary @if ($level == 2) active @endif">
                                             <input type="radio" name="pterodactyl:auth:2fa_required" autocomplete="off" value="2" @if ($level == 2) checked @endif> 所有用户
