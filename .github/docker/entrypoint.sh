@@ -46,7 +46,7 @@ else
   else
     echo "编写 ssl 配置"
     cp .github/docker/default_ssl.conf /etc/nginx/http.d/panel.conf
-    echo "更新域名的 ssl 配置"
+    echo "正在更新域名的 ssl 配置"
     sed -i "s|<domain>|$(echo $APP_URL | sed 's~http[s]*://~~g')|g" /etc/nginx/http.d/panel.conf
     echo "生成证书"
     certbot certonly -d $(echo $APP_URL | sed 's~http[s]*://~~g')  --standalone -m $LE_EMAIL --agree-tos -n
