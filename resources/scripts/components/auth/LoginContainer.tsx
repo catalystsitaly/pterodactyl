@@ -22,6 +22,7 @@ const LoginContainer = ({ history }: RouteComponentProps) => {
 
     const { clearFlashes, clearAndAddHttpError } = useFlash();
     const { enabled: recaptchaEnabled, siteKey } = useStoreState((state) => state.settings.data!.recaptcha);
+    const name = useStoreState((state) => state.settings.data?.name);
 
     useEffect(() => {
         clearFlashes();
@@ -74,14 +75,14 @@ const LoginContainer = ({ history }: RouteComponentProps) => {
             })}
         >
             {({ isSubmitting, setSubmitting, submitForm }) => (
-                <LoginFormContainer title={'登入'} css={tw`w-full flex`}>
+                <LoginFormContainer title={'登录到 ' + name} css={tw`w-full flex`}>
                     <Field light type={'text'} label={'用户名或邮箱地址'} name={'username'} disabled={isSubmitting} />
                     <div css={tw`mt-6`}>
                         <Field light type={'password'} label={'密码'} name={'password'} disabled={isSubmitting} />
                     </div>
                     <div css={tw`mt-6`}>
                         <Button type={'submit'} size={'xlarge'} isLoading={isSubmitting} disabled={isSubmitting}>
-                            登入
+                            登录
                         </Button>
                     </div>
                     {recaptchaEnabled && (
