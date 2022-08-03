@@ -58,6 +58,7 @@ class AccountCreated extends Notification implements ShouldQueue
     public function toMail($notifiable)
     {
         $message = (new MailMessage())
+            ->subject('已创建帐户')
             ->greeting('你好 ' . $this->user->name . '!')
             ->line('您收到这封电子邮件是因为已经为您创建了一个帐户于 ' . config('app.name') . '.')
             ->line('账户名称: ' . $this->user->username)

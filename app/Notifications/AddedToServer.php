@@ -54,6 +54,7 @@ class AddedToServer extends Notification implements ShouldQueue
     public function toMail($notifiable)
     {
         return (new MailMessage())
+            ->subject('已被添加为子用户')
             ->greeting('你好 ' . $this->server->user . '!')
             ->line('您已被添加为以下服务器的子用户，允许您对服务器进行一定的控制。')
             ->line('服务器名称: ' . $this->server->name)

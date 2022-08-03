@@ -55,6 +55,7 @@ class RemovedFromServer extends Notification implements ShouldQueue
     {
         return (new MailMessage())
             ->error()
+            ->subject('已被移除子用户')
             ->greeting('你好 ' . $this->server->user . '.')
             ->line('您已作为以下服务器的子用户被删除,并失去其控制权限。')
             ->line('服务器名称: ' . $this->server->name)
