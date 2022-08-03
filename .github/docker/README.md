@@ -1,76 +1,75 @@
-# Pterodactyl Panel - Docker Image
-This is a ready to use docker image for the panel.
+# 翼龙面板 - Docker 镜像
+这是一个将面板所需环境等全部准备好的 docker 镜像。
 
-## Requirements
-This docker image requires some additional software to function. The software can either be provided in other containers (see the [docker-compose.yml](https://github.com/pterodactyl/panel/blob/develop/docker-compose.example.yml) as an example) or as existing instances.
+## 要求
+此 docker 镜像需要一些额外的软件来运作。这些软件既可以在其他容器中提供（见 [docker-compose.yml](https://github.com/pterodactyl-china/panel/blob/develop/docker-compose.example.yml) 为例），也可以作为现有的实例。
 
-A mysql database is required. We recommend the stock [MariaDB Image](https://hub.docker.com/_/mariadb/) image if you prefer to run it in a docker container. As a non-containerized option we recommend mariadb.
+需要一个 mysql 数据库。如果你喜欢在 docker 容器中运行它，我们推荐使用 [MariaDB Image](https://hub.docker.com/_/mariadb/) 镜像。作为一个非容器化的选择，我们推荐 mariadb。
 
-A caching software is required as well. We recommend the stock [Redis Image](https://hub.docker.com/_/redis/) image. You can choose any of the [supported options](#cache-drivers).
+还需要一个缓存软件。我们推荐使用 [Redis Image](https://hub.docker.com/_/redis/) 镜像。你可以选择任何一个[支持的选项](#缓存驱动程序)。
 
-You can provide additional settings using a custom `.env` file or by setting the appropriate environment variables in the docker-compose file.
+你可以使用自定义的 `.env` 文件或在 docker-compose 文件中设置适当的环境变量来提供额外的设置。
 
-## Setup
+## 设置
 
-Start the docker container and the required dependencies (either provide existing ones or start containers as well, see the [docker-compose.yml](https://github.com/pterodactyl/panel/blob/develop/docker-compose.example.yml) file as an example.
+启动 docker 容器和所需的依赖项（可以提供现有的依赖项，也可以同时启动容器，参见 [docker-compose.yml](https://github.com/pterodactyl-china/panel/blob/develop/docker-compose.example.yml) 文件为例。
 
-After the startup is complete you'll need to create a user.
-If you are running the docker container without docker-compose, use:
+启动完成后，您需要创建一个用户。
+如果您在没有 docker-compose 的情况下运行 docker 容器，请使用：
 ```
 docker exec -it <container id> php artisan p:user:make
 ```
-If you are using docker compose use
+如果您使用的是 docker compose，请使用
 ```
 docker-compose exec panel php artisan p:user:make
 ```
 
-## Environment Variables
-There are multiple environment variables to configure the panel when not providing your own `.env` file, see the following table for details on each available option.
+## 环境变量
+当您不提供自己的 `.env` 文件时，有多个环境变量可以配置面板，有关每个可用选项的详细信息，请参见下表。
 
-Note: If your `APP_URL` starts with `https://` you need to provide an `LETSENCRYPT_EMAIL` as well so Certificates can be generated.
+注意：如果您的 `APP_URL` 以 `https://` 开头，您还需要提供 `LETSENCRYPT_EMAIL` 以便生成证书。
 
-| Variable            | Description                                                                    | Required |
-| ------------------- | ------------------------------------------------------------------------------ | -------- |
-| `APP_URL`           | The URL the panel will be reachable with (including protocol)                  | yes      |
-| `APP_TIMEZONE`      | The timezone to use for the panel                                              | yes      |
-| `LE_EMAIL`          | The email used for letsencrypt certificate generation                          | yes      |
-| `DB_HOST`           | The host of the mysql instance                                                 | yes      |
-| `DB_PORT`           | The port of the mysql instance                                                 | yes      |
-| `DB_DATABASE`       | The name of the mysql database                                                 | yes      |
-| `DB_USERNAME`       | The mysql user                                                                 | yes      |
-| `DB_PASSWORD`       | The mysql password for the specified user                                      | yes      |
-| `CACHE_DRIVER`      | The cache driver        (see [Cache drivers](#cache-drivers) for detais)       | yes      |
-| `SESSION_DRIVER`    |                                                                                | yes      |
-| `QUEUE_DRIVER`      |                                                                                | yes      |
-| `REDIS_HOST`        | The hostname or IP address of the redis database                               | yes      |
-| `REDIS_PASSWORD`    | The password used to secure the redis database                                 | maybe    |
-| `REDIS_PORT`        | The port the redis database is using on the host                               | maybe    |
-| `MAIL_DRIVER`       | The email driver (see [Mail drivers](#mail-drivers) for details)               | yes      |
-| `MAIL_FROM`         | The email that should be used as the sender email                              | yes      |
-| `MAIL_HOST`         | The host of your mail driver instance                                          | maybe    |
-| `MAIL_PORT`         | The port of your mail driver instance                                          | maybe    |
-| `MAIL_USERNAME`     | The username for your mail driver                                              | maybe    |
-| `MAIL_PASSWORD`     | The password for your mail driver                                              | maybe    |
+| 变量               | 描述                           | 必需项 |
+|------------------|------------------------------|-----|
+| `APP_URL`        | 可以访问面板的 URL（包括协议）            | 是   |
+| `APP_TIMEZONE`   | 面板所使用的时区                     | 是   |
+| `LE_EMAIL`       | 用于生成 letsencrypt 证书的邮箱       | 是   |
+| `DB_HOST`        | MySQL 主机                     | 是   |
+| `DB_PORT`        | MySQL 端口                     | 是   |
+| `DB_DATABASE`    | MySQL 数据库名称                  | 是   |
+| `DB_USERNAME`    | MySQL 用户名                    | 是   |
+| `DB_PASSWORD`    | 指定用户的 MySQL 密码               | 是   |
+| `CACHE_DRIVER`   | 缓存驱动程序（详见[缓存驱动程序](#缓存驱动程序)）。 | 是   |
+| `SESSION_DRIVER` |                              | 是   |
+| `QUEUE_DRIVER`   |                              | 是   |
+| `REDIS_HOST`     | Redis 数据库主机名或IP地址            | 是   |
+| `REDIS_PASSWORD` | 用于保护 redis 数据库的密码            | 可选  |
+| `REDIS_PORT`     | Redis 数据库主机端口                | 可选  |
+| `MAIL_DRIVER`    | 邮件驱动程序（详见 [邮件驱动程序](#邮件驱动程序)） | 是   |
+| `MAIL_FROM`      | 发件邮箱                         | 是   |
+| `MAIL_HOST`      | 邮件驱动主机                       | 可选  |
+| `MAIL_PORT`      | 邮件驱动端口                       | 可选  |
+| `MAIL_USERNAME`  | 邮件驱动用户名                     | 可选  |
+| `MAIL_PASSWORD`  | 邮件驱动密码                       | 可选  |
 
+### 缓存驱动程序
+您可以根据自己的喜好选择不同的缓存驱动程序。
+我们推荐在使用 docker 时使用 redis，因为它可以在容器中轻松启动。
 
-### Cache drivers
-You can choose between different cache drivers depending on what you prefer.
-We recommend redis when using docker as it can be started in a container easily.
-
-| Driver   | Description                          | Required variables                                     |
+| 驱动程序   | 描述                                 | 所需变量                                               |
 | -------- | ------------------------------------ | ------------------------------------------------------ |
-| redis    | host where redis is running          | `REDIS_HOST`                                           |
-| redis    | port redis is running on             | `REDIS_PORT`                                           |
-| redis    | redis database password              | `REDIS_PASSWORD`                                       |
+| redis    | redis 运行的主机          | `REDIS_HOST`                                           |
+| redis    | redis 运行的端口             | `REDIS_PORT`                                           |
+| redis    | redis 数据库密码              | `REDIS_PASSWORD`                                       |
 
-### Mail drivers
-You can choose between different mail drivers according to your needs.
-Every driver requires `MAIL_FROM` to be set.
+### 邮件驱动程序
+你可以根据你的需要选择不同的邮件驱动。
+每个驱动程序都需要设置 `MAIL_FROM`。
 
-| Driver   | Description                          | Required variables                                            |
+| 驱动程序   | 描述                                 | 所需变量                                                       |
 | -------- | ------------------------------------ | ------------------------------------------------------------- |
-| mail     | uses the installed php mail          |                                                               |
+| mail     | 使用已安装的php邮件                   |                                                               |
 | mandrill | [Mandrill](http://www.mandrill.com/) | `MAIL_USERNAME`                                               |
 | postmark | [Postmark](https://postmarkapp.com/) | `MAIL_USERNAME`                                               |
 | mailgun  | [Mailgun](https://www.mailgun.com/)  | `MAIL_USERNAME`, `MAIL_HOST`                                  |
-| smtp     | Any SMTP server can be configured    | `MAIL_USERNAME`, `MAIL_HOST`, `MAIL_PASSWORD`, `MAIL_PORT`    |
+| smtp     | 任何SMTP服务器都可以配置               | `MAIL_USERNAME`, `MAIL_HOST`, `MAIL_PASSWORD`, `MAIL_PORT`    |
