@@ -1,18 +1,19 @@
-# Security Policy
+此内容为翼龙官方，与翼龙中国无关
+# 安全策略
 
-## Supported Versions
-The following versions of Pterodactyl are receiving active support and maintenance. Any security vulnerabilities discovered must be reproducible in supported versions.
+## 支持的版本
+以下版本的翼龙正在接受积极的支持及维护。发现的任何安全漏洞必须在受支持版本中重现。
 
-| Panel  | Daemon       | Supported          |
+| 面板  | 守护进程       | 支持状况          |
 |--------|--------------| ------------------ |
 | 1.10.x | wings@1.7.x  | :white_check_mark: |
 | 0.7.x  | daemon@0.6.x | :x: |
 
 
-## Reporting a Vulnerability
+## 漏洞报告
 
-Please reach out directly to any project team member on Discord when reporting a security vulnerability, or you can send an email to `dane@pterodactyl.io`.
+在报告安全漏洞时，请直接联系翼龙 Discord 上任意项目组的成员，或者你可以发送邮件到 `dane@pterodactyl.io` (请使用英文)。
 
-We make every effort to respond as soon as possible, although it may take a day or two for us to sync internally and determine the severity of the report and its impact. Please, _do not_ use a public facing channel or GitHub issues to report sensitive security issues.
+我们会尽一切努力尽快回复，尽管我们可能需要一两天的时间来进行内部同步并确定报告的严重性及其影响。请不要使用公共频道或 GitHub 问题来报告敏感的安全问题。
 
-As part of our process, we will create a security advisory for the affected versions and disclose it publicly, usually two to four weeks after a releasing a version that addresses it.
+作为我们程序的一部分，我们将为受影响的版本创建一个安全公告，并公开披露，通常在发布解决该问题的版本后两到四个星期。

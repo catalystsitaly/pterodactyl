@@ -1,28 +1,18 @@
-# Contributing
-Pterodactyl does not accept Pull Requests (PRs) _for new functionality_ from users that are not currently part of the
-core project team. It has become overwhelming to try and give the proper time and attention that such complicated PRs
-tend to require — and deserve. As a result, it is in the project's best interest to limit the scope of work on
-new functionality to work done within the core project team.
+# 贡献
+翼龙目前不接受来自不属于核心项目组用户的新功能拉取请求（PR）。试图给予适当的时间和关注已经变得不堪重负，而这种复杂的PR往往需要并值得关注。因此，将新功能的工作范围限制在核心项目团队内完成，是符合项目的最佳利益的。
 
-PRs that address existing _bugs_ with a corresponding issue opened in our issue tracker will continue to be accepted
-and reviewed. Their scope is often signficantly more targeted, and simply improving upon existing and well defined
-logic.
+在我们的 issue 中开出相应问题并解决现有 _bugs_ 的 PR 将继续被接受和审查。它们的范围通常更有针对性，而且只是在现有的和定义好的逻辑上进行改进。
 
-### Responsible Disclosure
-This is a fairly in-depth project and makes use of a lot of parts. We strive to keep everything as secure as possible
-and welcome you to take a look at the code provided in this project yourself. We do ask that you be considerate of
-others who are using the software and not publicly disclose security issues without contacting us first by email.
+### 责任披露
+这是一个相当深入的项目，并利用了很多部分。我们努力使一切都尽可能的安全，欢迎您亲自查看此项目中提供的代码。我们确实要求你为正在使用该软件的其他人着想，在没有通过电子邮件与我们联系之前，不要公开披露安全问题。
 
-We'll make a deal with you: if you contact us by email and we fail to respond to you within a week you are welcome to
-publicly disclose whatever issue you have found. We understand how frustrating it is when you find something big and
-no one will respond to you. This holds us to a standard of providing prompt attention to any issues that arise and
-keeping this community safe.
+我们和你做个交易：如果你通过电子邮件联系我们，而我们在一周内没有回复你，欢迎你公开披露你发现的任何问题。我们理解，当你发现一些大问题而没有人愿意回应你时，是多么令人沮丧的事情。这使我们有一个标准，即对任何出现的问题提供及时关注，并保持这个社区的安全。
 
-If you've found what you believe is a security issue please email `dane@pterodactyl.io`. Please check
-[SECURITY.md](/SECURITY.md) for additional details.
+如果你发现了你认为的安全问题，请发邮件给 `dane@pterodactyl.io` (请使用英文)。请查看 [SECURITY.md](/SECURITY.md) 了解更多细节。
 
-### Contact Us
-You can find us in a couple places online. First and foremost, we're active right here on Github. If you encounter a
-bug or other problems, open an issue on here for us to take a look at it. We also accept feature requests here as well.
+### 联系我们
+你可以在网上的几个地方找到我们。首先，也是最重要的，我们在 Github 上很活跃。如果你遇到一个错误或其他问题，在这里开一个问题，让我们看看。我们也在这里接受功能请求。
 
-You can also find us on [Discord](https://discord.gg/pterodactyl).
+你也可以在 [Discord](https://discord.gg/pterodactyl) 上找到我们。
+
+**此内容为翼龙官方，与翼龙中国无关，所以在询问他们时用英语交流**

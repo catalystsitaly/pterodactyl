@@ -74,8 +74,8 @@ echo -e "迁移或生成数据库"
 php artisan migrate --seed --force
 
 ## 启动队列的 cronjobs
-echo -e "Starting cron jobs."
+echo -e "正在启动 cron 作业."
 crond -L /var/log/crond -l 5
 
-echo -e "Starting supervisord."
+echo -e "正在启动 supervisord."
 exec "$@"
