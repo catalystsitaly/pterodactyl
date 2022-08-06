@@ -96,7 +96,7 @@
                     <div class="form-group">
                         <label for="pDockerImage">镜像</label>
                         <select id="pDockerImage" name="docker_image" class="form-control"></select>
-                        <input id="pDockerImageCustom" name="custom_docker_image" value="{{ old('custom_docker_image') }}" class="form-control" placeholder="Or enter a custom image..." style="margin-top:1rem"/>
+                        <input id="pDockerImageCustom" name="custom_docker_image" value="{{ old('custom_docker_image') }}" class="form-control" placeholder="或输入自定义镜像..." style="margin-top:1rem"/>
                         <p class="small text-muted no-margin">这是将用于运行此服务器的 Docker 映像。从下拉列表中选择镜像或在上面的文本字段中输入自定义镜像.</p>
                     </div>
                 </div>

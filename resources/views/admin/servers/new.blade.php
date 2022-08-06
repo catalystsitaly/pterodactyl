@@ -32,7 +32,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="pName">名称</label>
-                            <input type="text" class="form-control" id="pName" name="name" value="{{ old('name') }}" placeholder="Server Name">
+                            <input type="text" class="form-control" id="pName" name="name" value="{{ old('name') }}" placeholder="服务器名称">
                             <p class="small text-muted no-margin">字符限制: <code>a-z A-Z 0-9 _ - .</code> 和 <code>[空格]</code>.</p>
                         </div>
 
