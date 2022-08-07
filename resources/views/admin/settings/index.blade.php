@@ -28,7 +28,7 @@
                                 <label class="control-label">公司名称</label>
                                 <div>
                                     <input type="text" class="form-control" name="app:name" value="{{ old('app:name', config('app.name')) }}" />
-                                    <p class="text-muted"><small>这是整个面板和发送给用户的电子邮件中使用的名称.</small></p>
+                                    <p class="text-muted"><small>这是整个面板和发送给用户的电子邮箱中使用的名称.</small></p>
                                 </div>
                             </div>
                             <div class="form-group col-md-4">

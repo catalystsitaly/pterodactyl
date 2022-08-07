@@ -96,9 +96,9 @@ const EditSubuserModal = ({ subuser }: Props) => {
             }
             validationSchema={object().shape({
                 email: string()
-                    .max(191, '电子邮件地址不得超过 191 个字符。')
-                    .email('必须提供有效的电子邮件地址。')
-                    .required('必须提供有效的电子邮件地址。'),
+                    .max(191, '电子邮箱地址不得超过 191 个字符。')
+                    .email('必须提供有效的电子邮箱地址。')
+                    .required('必须提供有效的电子邮箱地址。'),
                 permissions: array().of(string()),
             })}
         >
@@ -129,7 +129,7 @@ const EditSubuserModal = ({ subuser }: Props) => {
                             name={'email'}
                             label={'用户邮箱地址'}
                             description={
-                                '输入您希望邀请为该服务器子用户的用户的电子邮件地址。'
+                                '输入您希望邀请为该服务器子用户的用户的电子邮箱地址。'
                             }
                         />
                     </div>
