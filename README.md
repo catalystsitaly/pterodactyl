@@ -1,7 +1,7 @@
 [![Logo Image](https://api.pterodactyl.top/logos/new/pterodactyl_china_logo.png)](https://pterodactyl.top)
 
 ![GitHub Stars](https://img.shields.io/github/stars/pterodactyl-china/panel?style=for-the-badge&logo=appveyor)
-![GitHub Issues](https://img.shields.io/github/issues/pterodactyl-china/panel?style=for-the-badge&logo=appveyor)
+[![KOOK](https://img.shields.io/badge/dynamic/json?color=44cc11&label=KOOK&query=online_count&suffix=%20ONLINE&url=https%3A%2F%2Fwww.kookapp.cn%2Fapi%2Fguilds%2F3158748478503304%2Fwidget.json&style=for-the-badge&logo=googlechat)](https://kook.top/FRyhXY)
 ![GitHub Releases](https://img.shields.io/github/v/release/pterodactyl-china/panel?style=for-the-badge&logo=appveyor)
 ![GitHub Releases](https://img.shields.io/github/downloads/pterodactyl-china/panel/total?style=for-the-badge)
 ![GitHub Releases Latest](https://img.shields.io/github/downloads/pterodactyl-china/panel/latest/total?style=for-the-badge)
@@ -68,10 +68,10 @@ I would like to extend my sincere thanks to the following sponsors for helping f
 * FiveM
 * Xonotic
 * Discord ATLBot
-* [更多...](https://github.com/parkervcp/eggs)
+* [更多...](https://github.com/pterodactyl-china/eggs)
 
 ## 开源协议
-Pterodactyl® Copyright © 2015 - 2022 Dane Everitt and contributors.
+Pterodactyl® Copyright © 2015 - 2022 Dane Everitt and contributors.     
 Code released under the [MIT License](./LICENSE.md).
 
 此本地化项目同样遵循 翼龙开源协议 与 MIT 开源协议   
