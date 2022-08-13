@@ -33,7 +33,7 @@
             </div>
             <div class="box-body">
                 @if ($version->isLatestPanel())
-                    您正运行 Pterodactyl-CHINA 最新的翼龙面板版本(开发版) <code>{{ config('app.version') }}</code>.
+                    您正运行 Pterodactyl 最新的翼龙面板版本(开发版) <code>{{ config('app.version') }}</code>.
                 @else
                     您目前使用的面板 <strong>并非最新版(开发版)!</strong> 目前最新版本为 <a href="https://github.com/Pterodactyl-China/Panel/releases/v{{ $version->getPanel() }}" target="_blank"><code>{{ $version->getPanel() }}</code></a> 您正运行的版本为 <code>{{ config('app.version') }}</code>.
                 @endif

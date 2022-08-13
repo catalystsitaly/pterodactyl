@@ -1,4 +1,3 @@
-{{-- Pterodactyl - Panel which Sinicizated by iLwork.CN STUDIO --}}
 {{-- Copyright (c) 2015 - 2017 Dane Everitt <dane@daneeveritt.com> --}}
 {{-- Simplified Chinese Translation Copyright (c) 2021 - 2022 Ice Ling <iceling@ilwork.cn> --}}
 
