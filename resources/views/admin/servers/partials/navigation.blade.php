@@ -22,7 +22,7 @@
                         <a href="{{ route('admin.servers.view.database', $server->id) }}">数据库</a>
                     </li>
                     <li class="{{ $router->currentRouteNamed('admin.servers.view.mounts') ? 'active' : '' }}">
-                        <a href="{{ route('admin.servers.view.mounts', $server->id) }}">存储挂载</a>
+                        <a href="{{ route('admin.servers.view.mounts', $server->id) }}">挂载</a>
                     </li>
                 @endif
                 <li class="{{ $router->currentRouteNamed('admin.servers.view.manage') ? 'active' : '' }}">

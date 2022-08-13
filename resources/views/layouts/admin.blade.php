@@ -120,7 +120,7 @@
                         <li class="header">服务管理</li>
                         <li class="{{ ! starts_with(Route::currentRouteName(), 'admin.mounts') ?: 'active' }}">
                             <a href="{{ route('admin.mounts') }}">
-                                <i class="fa fa-magic"></i> <span>存储挂载</span>
+                                <i class="fa fa-magic"></i> <span>挂载</span>
                             </a>
                         </li>
                         <li class="{{ ! starts_with(Route::currentRouteName(), 'admin.nests') ?: 'active' }}">
